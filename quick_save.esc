@@ -1,0 +1,16 @@
+:load
+
+cut_scene telon fade_out
+
+## Global flags
+
+
+## Objects
+
+
+## Player
+
+change_scene res://scenes/test/test.scn
+teleport_pos player 928 811
+
+cut_scene telon fade_in
