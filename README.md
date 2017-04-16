@@ -1,4 +1,4 @@
-# The Lost Dev Team
+# Amnesia Adventure
 
 # Concept
 
