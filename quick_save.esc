@@ -10,7 +10,7 @@ cut_scene telon fade_out
 
 ## Player
 
-change_scene res://scenes/room1/room1.scn
-teleport_pos player 1509.477905 688.179199
+change_scene res://scenes/test/test.scn
+teleport_pos player 675.640259 445.582794
 
 cut_scene telon fade_in
