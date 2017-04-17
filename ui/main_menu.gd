@@ -18,7 +18,7 @@ func button_clicked():
 func newgame_pressed():
 	button_clicked()
 	if root.get_current_scene() extends preload("res://globals/scene.gd"):
-		confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
+		#confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
 		confirm_popup.start("UI_NEW_GAME_CONFIRM",self,"start_new_game")
 	else:
 		start_new_game(true)
@@ -62,8 +62,9 @@ func menu_collapsed():
 
 func _on_exit_pressed():
 	button_clicked()
-	confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
-	confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
+	#confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
+	#confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
+	get_tree().quit();
 	
 func _quit_game(p_confirm):
 	if !p_confirm:
