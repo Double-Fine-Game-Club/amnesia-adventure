@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/test/box.png" type="Texture" id=2]
-[ext_resource path="res://scenes/test/newspaper.png" type="Texture" id=3]
+[ext_resource path="res://scenes/test/sprites/box.png" type="Texture" id=2]
+[ext_resource path="res://scenes/test/sprites/box.png" type="Texture" id=3]
+[ext_resource path="res://scenes/test/sprites/newspaper.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -14,12 +15,22 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:texture")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ ExtResource( 2 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:tooltip")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ "Box" ] }
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ "Box" ]
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -31,12 +42,22 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:texture")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ ExtResource( 3 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:tooltip")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ "Newspapers" ] }
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ "Newspapers" ]
+}
 
 [node name="box" type="Node2D"]
 
@@ -55,7 +76,10 @@ use_action_menu = true
 interact_angle = -1
 talk_animation = "talk"
 active = true
-placeholders = {  }
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="sprite" type="Sprite" parent="."]
 
