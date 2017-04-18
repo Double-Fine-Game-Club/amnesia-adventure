@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://scenes/test/chainsaw.png" type="Texture" id=1]
+[ext_resource path="res://scenes/test/sprites/chainsaw.png" type="Texture" id=1]
 [ext_resource path="res://globals/item.gd" type="Script" id=2]
 
 [node name="chainsaw" type="TextureFrame"]
@@ -30,6 +30,9 @@ use_action_menu = true
 interact_angle = -1
 talk_animation = "talk"
 active = true
-placeholders = {  }
+placeholders = {
+
+}
+use_custom_z = false
 
 

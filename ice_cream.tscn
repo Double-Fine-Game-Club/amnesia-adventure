@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://scenes/test/ice_cream.png" type="Texture" id=1]
+[ext_resource path="res://scenes/test/sprites/ice_cream.png" type="Texture" id=1]
 
 [node name="ice_cream" type="TextureFrame"]
 
