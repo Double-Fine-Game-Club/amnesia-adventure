@@ -9,4 +9,4 @@ set_state bg_music off
 
 say player "A strawberry ice cream cone"
 
-set_state bg_music "res://scenes/test/dog_splash_theme.ogg"
+set_state bg_music "res://rooms/test/dog_splash_theme.ogg"

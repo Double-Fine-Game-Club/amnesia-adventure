@@ -3,11 +3,11 @@ var current_scene
 
 func doug_pressed():
 	current_scene.queue_free()
-	get_tree().change_scene("res://scenes/doug/doug.tscn")
+	get_tree().change_scene("res://rooms/doug/doug.tscn")
 
 func clock_pressed():
 	current_scene.queue_free()
-	get_tree().change_scene("res://scenes/clock/clock.tscn")
+	get_tree().change_scene("res://rooms/clock/clock.tscn")
 
 func _ready():
 	var root = get_tree().get_root()

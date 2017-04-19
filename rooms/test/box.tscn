@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/test/sprites/box.png" type="Texture" id=2]
-[ext_resource path="res://scenes/test/sprites/box.png" type="Texture" id=3]
-[ext_resource path="res://scenes/test/sprites/newspaper.png" type="Texture" id=4]
+[ext_resource path="res://rooms/test/sprites/box.png" type="Texture" id=2]
+[ext_resource path="res://rooms/test/sprites/box.png" type="Texture" id=3]
+[ext_resource path="res://rooms/test/sprites/newspaper.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -68,7 +68,7 @@ scale_on_map = false
 light_on_map = false
 tooltip = "Box"
 action = ""
-events_path = "res://scenes/test/box.esc"
+events_path = "res://rooms/test/box.esc"
 global_id = "box"
 use_combine = false
 inventory = false

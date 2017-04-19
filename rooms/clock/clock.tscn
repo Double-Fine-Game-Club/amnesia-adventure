@@ -1,19 +1,17 @@
 [gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
-[ext_resource path="res://scenes/doug/sprites/doug-bg-jennibee.png" type="Texture" id=2]
+[ext_resource path="res://rooms/clock/sprites/clock-bg-taekon.png" type="Texture" id=2]
 [ext_resource path="res://globals/background.gd" type="Script" id=3]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=4]
-[ext_resource path="res://scenes/doug/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rooms/clock/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=6]
-
-
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = Vector2Array( 846.017, -26.8566, 845.403, 19.9354, 795.94, 12.7366, 551.915, -21.4575, 695.678, 10.937, 472.428, 5.5379, 253.802, -25.0569, 328.664, -25.0569, 114.158, 10.937, 114.158, -21.4575 )
-polygons = [ IntArray( 0, 1, 2 ), IntArray( 3, 0, 2, 4, 5 ), IntArray( 6, 7, 3, 5, 8, 9 ) ]
-outlines = [ Vector2Array( 253.802, -25.0569, 328.664, -25.0569, 551.915, -21.4575, 846.017, -26.8566, 845.403, 19.9354, 795.94, 12.7366, 695.678, 10.937, 472.428, 5.5379, 114.158, 10.937, 114.158, -21.4575 ) ]
+vertices = Vector2Array( 472.428, 5.5379, 140.865, 8.59393, 140.865, -55.483, 396.904, -68.7402, 452.707, -55.483, 795.94, 12.7366, 695.678, 10.937, 528.205, -66.5308, 1468.65, -66.5308, 1468.65, 8.59393 )
+polygons = [ IntArray( 0, 1, 2, 3, 4 ), IntArray( 5, 6, 0, 4, 7, 8, 9 ) ]
+outlines = [ Vector2Array( 396.904, -68.7402, 452.707, -55.483, 528.205, -66.5308, 1468.65, -66.5308, 1468.65, 8.59393, 795.94, 12.7366, 695.678, 10.937, 472.428, 5.5379, 140.865, 8.59393, 140.865, -55.483 ) ]
 
 [node name="scene" type="Node2D"]
 
@@ -37,7 +35,7 @@ action = "walk"
 
 [node name="terrain" type="Navigation2D" parent="."]
 
-transform/pos = Vector2( -99.9615, 549.717 )
+transform/pos = Vector2( -104.506, 806.461 )
 transform/scale = Vector2( 0.950644, 0.961125 )
 script/script = ExtResource( 4 )
 scales = null
@@ -57,8 +55,8 @@ enabled = true
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 822.904, 493.742 )
-z/z = 493
+transform/pos = Vector2( 1413.64, 732.31 )
+z/z = 732
 
 [node name="game" parent="." instance=ExtResource( 6 )]
 
