@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=2 format=1]
 
 [ext_resource path="res://globals/bg_music.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sounds/asianoriental2.ogg" type="AudioStream" id=2]
 
 [node name="bg_music" type="Control"]
 
@@ -28,11 +27,14 @@ use_action_menu = true
 interact_angle = -1
 talk_animation = "talk"
 active = true
-placeholders = {  }
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="stream" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 2 )
+stream/stream = null
 stream/play = false
 stream/loop = false
 stream/volume_db = 0.0
