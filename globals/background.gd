@@ -5,7 +5,7 @@ export var action = "walk"
 func input(event):
 	if event.type == InputEvent.MOUSE_BUTTON && event.pressed:
 		if (event.button_index == 1):
-			get_tree().call_group(0, "game", "clicked", self, get_pos() + Vector2(event.x, event.y))
+			get_tree().call_group(0, "game", "clicked", self, get_pos() + Vector2(event.x, event.y), BUTTON_LEFT)
 		elif (event.button_index == 2):
 			emit_right_click()
 
