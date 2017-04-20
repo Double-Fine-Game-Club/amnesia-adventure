@@ -65,7 +65,7 @@ func set_current_action(p_act):
 func set_current_tool(p_tool):
 	current_tool = p_tool
 
-func clicked(obj, pos):
+func clicked(obj, pos, button_index):
 	joystick_mode = false
 	if !vm.can_interact():
 		return
@@ -73,6 +73,8 @@ func clicked(obj, pos):
 		player = self
 	if mode == "default":
 		var action = obj.get_action()
+		if (button_index == BUTTON_RIGHT):
+			action = obj.get_secondary_action()
 		#action_menu.stop()
 		if action == "walk":
 
