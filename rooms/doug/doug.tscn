@@ -11,6 +11,7 @@
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=9]
 [ext_resource path="res://music/meadow-jennibee.ogg" type="AudioStream" id=10]
 
+
 [sub_resource type="NavigationPolygon" id=1]
 
 vertices = Vector2Array( 174.992, 303.598, 174.992, -225.224, 284.107, -222.776, 362.307, 313.391, 545.983, -217.88, 540.528, 308.495, 1429.81, -220.328, 1435.27, 315.839, 798.767, 315.839, 1044.28, -217.88 )
