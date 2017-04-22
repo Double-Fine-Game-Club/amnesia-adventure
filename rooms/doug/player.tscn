@@ -6,33 +6,18 @@
 [ext_resource path="res://characters/doug/idle_right.png" type="Texture" id=4]
 [ext_resource path="res://characters/doug/idle_up.png" type="Texture" id=5]
 [ext_resource path="res://characters/doug/walk_down.png" type="Texture" id=6]
-[ext_resource path="res://characters/doug/walk_right.png" type="Texture" id=7]
-[ext_resource path="res://characters/doug/walk_up.png" type="Texture" id=8]
-[ext_resource path="res://characters/doug/walk_up2.png" type="Texture" id=9]
-[ext_resource path="res://characters/doug/walk_right2.png" type="Texture" id=10]
-[ext_resource path="res://characters/doug/walk_down2.png" type="Texture" id=11]
+[ext_resource path="res://characters/doug/walk_down2.png" type="Texture" id=7]
+[ext_resource path="res://characters/doug/walk_right.png" type="Texture" id=8]
+[ext_resource path="res://characters/doug/walk_right2.png" type="Texture" id=9]
+[ext_resource path="res://characters/doug/walk_up.png" type="Texture" id=10]
+[ext_resource path="res://characters/doug/walk_up2.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "walk_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "walk_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "walk_down",
 "speed": 5.0
 } ]
 
@@ -90,51 +75,50 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 
 resource/name = "walk_down"
-length = 1.0
-loop = false
-step = 0.1
+length = 4.0
+loop = true
+step = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 1, 2, 3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 0, 3, 0, 4 ]
 }
 
 [sub_resource type="Animation" id=6]
 
-length = 1.0
-loop = false
+length = 4.0
+loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 1, 2, 3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 1, 5, 1, 6 ]
 }
 
 [sub_resource type="Animation" id=7]
 
-resource/name = "walk_up"
-length = 1.0
-loop = false
+length = 4.0
+loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 1, 2, 3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 2, 7, 2, 8 ]
 }
 
 [node name="player" type="Node2D"]
@@ -153,12 +137,12 @@ placeholders = {
 
 transform/pos = Vector2( 5.2803, -49.2264 )
 frames = SubResource( 1 )
-animation = "walk_down"
+animation = "default"
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
-playback/default_blend_time = 0.0
+playback/default_blend_time = 1.0
 root/root = NodePath("..")
 anims/idle_down = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
@@ -167,7 +151,7 @@ anims/walk_down = SubResource( 5 )
 anims/walk_right = SubResource( 6 )
 anims/walk_up = SubResource( 7 )
 playback/active = true
-playback/speed = 1.0
+playback/speed = 6.0
 blend_times = [  ]
 autoplay = ""
 

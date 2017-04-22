@@ -99,7 +99,7 @@ func _on_language_selected(lang):
 	vm.save_settings()
 
 func _ready():
-	get_node("new_game").connect("pressed", self, "newgame_pressed")
+	#get_node("new_game").connect("pressed", self, "newgame_pressed")
 	get_node("continue").connect("pressed", self, "continue_pressed")
 	#get_node("save").connect("pressed", self, "save_pressed")
 	get_node("exit").connect("pressed", self, "_on_exit_pressed")
