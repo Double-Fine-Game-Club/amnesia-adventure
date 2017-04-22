@@ -1,0 +1,11 @@
+:use
+
+say player "Tastes like strawberry."
+
+:look
+
+say player "It's an ice cream."
+
+:use inv_can
+
+say player "Nah. Too messy."
