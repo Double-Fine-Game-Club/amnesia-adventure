@@ -90,7 +90,7 @@ func clicked(obj, pos, button_index):
 			if current_action == "use" && obj.use_combine && current_tool == null:
 				set_current_tool(obj)
 			else:
-				interact([obj, current_action, current_tool])
+				interact([obj, current_action, current_tool], button_index)
 		elif action != "":
 			player.interact([obj, action, current_tool])
 		elif current_action != "":
@@ -129,13 +129,15 @@ func action_menu_selected(obj, action):
 		interact([obj, action])
 	action_menu.stop()
 
-func interact(p_params):
+func interact(p_params, button_index = BUTTON_LEFT):
 	if mode == "default":
 		var obj = p_params[0]
 		clear_action()
 		var action = p_params[1]
 		if !action:
 			action = obj.get_action()
+			if (button_index == BUTTON_RIGHT):
+				action = obj.get_secondary_action()
 
 		if p_params.size() > 2:
 			clear_action()
