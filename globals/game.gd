@@ -13,6 +13,7 @@ var min_interact_dist = 50*50
 var last_obj = null
 
 var current_action = ""
+var one_click_action = ""
 var current_tool = null
 
 var click
@@ -27,8 +28,10 @@ func set_mode(p_mode):
 func mouse_enter(obj):
 	var text
 	var tt = obj.get_tooltip()
-	if current_action != "" && current_tool != null:
-		text = tr(current_action + ".combine_id")
+	if current_tool != null:
+		text = "use.combine_id"
+		if current_action != "":
+			text = tr(current_action + ".combine_id")
 		text = text.replace("%2", tr(tt))
 		text = text.replace("%1", tr(current_tool.get_tooltip()))
 	elif obj.inventory:
@@ -86,8 +89,12 @@ func clicked(obj, pos, button_index):
 			get_tree().call_group(0, "hud", "set_tooltip", "")
 
 		elif obj.inventory:
+			var one_click_action = obj.get_action()
+			if button_index == BUTTON_RIGHT:
+				one_click_action = obj.get_secondary_action()
 
-			if current_action == "use" && obj.use_combine && current_tool == null:
+			# NOTE! This makes it impossible to use a left-click "Action" in combination with a verb interface
+			if (current_action == "use" || one_click_action == "use") && obj.use_combine && current_tool == null:
 				set_current_tool(obj)
 			else:
 				interact([obj, current_action, current_tool], button_index)
