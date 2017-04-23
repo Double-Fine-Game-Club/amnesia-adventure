@@ -1,0 +1,7 @@
+:look
+
+say player "It says 'mirage'."
+
+:use
+
+say player "It's stuck in the sand."

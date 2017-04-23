@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://globals/player.gd" type="Script" id=1]
+[ext_resource path="res://characters/wizard/idle_left.png" type="Texture" id=2]
+
+[node name="wizard" type="Node2D"]
+
+script/script = ExtResource( 1 )
+speed = 300
+v_speed_damp = 1.0
+animations = null
+camera_limits = Rect2( 0, 0, 0, 0 )
+telekinetic = false
+placeholders = {
+
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, -40.9261 )
+texture = ExtResource( 2 )
+
+

@@ -1,0 +1,7 @@
+:look
+
+say player "I can some coconuts hanging from it."
+
+:use
+
+say player "I don't want to climb that."

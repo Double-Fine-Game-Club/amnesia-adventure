@@ -70,6 +70,7 @@ func set_current_tool(p_tool):
 
 func clicked(obj, pos, button_index):
 	joystick_mode = false
+	# TODO: Figure out why stack isn't cleared when interacting with item_background
 	if !vm.can_interact():
 		return
 	if player == null:

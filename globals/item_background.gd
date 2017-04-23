@@ -4,6 +4,7 @@ extends "res://globals/interactive.gd"
 
 export var tooltip = ""
 export var action = ""
+export var secondary_action = ""
 export(String,FILE) var events_path = ""
 export var global_id = ""
 export var use_combine = false
@@ -78,6 +79,9 @@ func activate(p_action, p_param = null):
 func get_action():
 	return action 
 
+func get_secondary_action():
+	return secondary_action
+
 func mouse_enter():
 	get_tree().call_group(0, "game", "mouse_enter", self)
 	_check_focus(true, false)
@@ -89,7 +93,7 @@ func mouse_exit():
 func input(viewport, event, shape_idx):
 	if event.type == InputEvent.MOUSE_BUTTON || event.is_action("ui_accept"):
 		if event.is_pressed():
-			get_tree().call_group(0, "game", "clicked", self, get_pos())
+			get_tree().call_group(0, "game", "clicked", self, get_pos(), event.button_index)
 			_check_focus(true, true)
 		else:
 			_check_focus(true, false)
@@ -148,7 +152,7 @@ func drop_data(point, data):
 	if !inventory:
 		return
 	
-	get_tree().call_group(0, "game", "clicked", self, get_pos())
+	get_tree().call_group(0, "game", "clicked", self, get_pos(), BUTTON_LEFT)
 	vm.drag_end()
 
 
