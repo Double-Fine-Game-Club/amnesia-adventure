@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://ui/settings.gd" type="Script" id=1]
+[ext_resource path="res://fonts/jenni.fnt" type="BitmapFont" id=2]
 
 [node name="Panel" type="Panel"]
 
@@ -19,14 +20,16 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 
+rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 172.0
-margin/top = 52.0
-margin/right = 772.0
-margin/bottom = 89.0
+margin/left = -120.0
+margin/top = 71.0
+margin/right = 480.0
+margin/bottom = 108.0
+custom_fonts/font = ExtResource( 2 )
 text = "Options"
 align = 1
 percent_visible = 1.0
@@ -35,14 +38,16 @@ max_lines_visible = -1
 
 [node name="Label1" type="Label" parent="."]
 
+rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 178.0
-margin/top = 260.0
-margin/right = 778.0
-margin/bottom = 297.0
+margin/left = -120.0
+margin/top = 285.0
+margin/right = 480.0
+margin/bottom = 322.0
+custom_fonts/font = ExtResource( 2 )
 text = "Options will go here."
 align = 1
 percent_visible = 1.0
@@ -51,15 +56,16 @@ max_lines_visible = -1
 
 [node name="GoBack" type="Button" parent="."]
 
+rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 size_flags/stretch_ratio = 44.0
-margin/left = 448.0
-margin/top = 544.0
-margin/right = 513.0
-margin/bottom = 599.0
+margin/left = 428.0
+margin/top = 511.0
+margin/right = 478.0
+margin/bottom = 541.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

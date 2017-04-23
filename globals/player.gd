@@ -196,8 +196,8 @@ func _get_dir_deg(deg):
 
 
 func _notification(what):
-	if !get_tree() || !get_tree().is_editor_hint():
-		return
+	#if !get_tree() || !get_tree().is_editor_hint():
+	return
 
 	if what == CanvasItem.NOTIFICATION_TRANSFORM_CHANGED:
 		call_deferred("_editor_transform_changed")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://rooms/doug/sprites/doug-bg-jennibee.png" type="Texture" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://rooms/doug/player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=9]
 [ext_resource path="res://music/meadow-jennibee.ogg" type="AudioStream" id=10]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=11]
+[ext_resource path="res://ui/hub_button.gd" type="Script" id=11]
+[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=12]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -151,7 +152,17 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="back_to_hub" type="Node2D" parent="."]
+[node name="back_to_hub" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 11 )
 
 [node name="hub_button" type="TextureButton" parent="back_to_hub"]
 
@@ -166,7 +177,7 @@ margin/bottom = 913.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 11 )
+textures/normal = ExtResource( 12 )
 params/resize_mode = 1
 params/stretch_mode = 0
 

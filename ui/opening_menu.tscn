@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://ui/opening_menu.gd" type="Script" id=1]
-[ext_resource path="res://rooms/hub/sprites/hub-timegentleman.png" type="Texture" id=2]
-[ext_resource path="res://art/logo-wavingpeople-and-mythalore.png" type="Texture" id=3]
-[ext_resource path="res://art/play-button-mythalore.png" type="Texture" id=4]
-[ext_resource path="res://art/options-button-mythalore.png" type="Texture" id=5]
-[ext_resource path="res://art/credits-button-mythalore.png" type="Texture" id=6]
-[ext_resource path="res://art/quit-button-mythalore.png" type="Texture" id=7]
-[ext_resource path="res://music/menu-of-amnesia-jennibee.ogg" type="AudioStream" id=8]
+[ext_resource path="res://art/concept-art.png" type="Texture" id=2]
+[ext_resource path="res://art/menu-wavingpeople-and-mythalore.png" type="Texture" id=3]
+[ext_resource path="res://art/logo-wavingpeople-and-mythalore.png" type="Texture" id=4]
+[ext_resource path="res://art/play-button-mythalore.png" type="Texture" id=5]
+[ext_resource path="res://art/options-button-mythalore.png" type="Texture" id=6]
+[ext_resource path="res://art/credits-button-mythalore.png" type="Texture" id=7]
+[ext_resource path="res://art/quit-button-mythalore.png" type="Texture" id=8]
+[ext_resource path="res://music/menu-of-amnesia-jennibee.ogg" type="AudioStream" id=9]
 
 [node name="main_menu" type="Control"]
 
@@ -21,6 +22,20 @@ margin/right = 1930.0
 margin/bottom = 1101.0
 script/script = ExtResource( 1 )
 
+[node name="concept-art" type="TextureFrame" parent="."]
+
+visibility/behind_parent = true
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
 [node name="background" type="TextureFrame" parent="."]
 
 visibility/behind_parent = true
@@ -32,7 +47,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 1920.0
 margin/bottom = 1080.0
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 stretch_mode = 0
 
 [node name="logo" type="TextureFrame" parent="."]
@@ -42,11 +57,12 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 282.0
-margin/top = 41.0
-margin/right = 2202.0
-margin/bottom = 1121.0
-texture = ExtResource( 3 )
+margin/left = 345.0
+margin/top = 36.0
+margin/right = 1618.0
+margin/bottom = 584.0
+texture = ExtResource( 4 )
+expand = true
 stretch_mode = 0
 
 [node name="new_game" type="TextureButton" parent="."]
@@ -55,14 +71,14 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 435.0
-margin/top = 709.0
-margin/right = 714.0
-margin/bottom = 827.0
+margin/left = 429.0
+margin/top = 647.0
+margin/right = 708.0
+margin/bottom = 765.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 4 )
+textures/normal = ExtResource( 5 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -72,14 +88,14 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 1152.0
-margin/top = 715.0
-margin/right = 1496.0
-margin/bottom = 829.0
+margin/left = 1225.0
+margin/top = 628.0
+margin/right = 1569.0
+margin/bottom = 742.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 5 )
+textures/normal = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -89,14 +105,14 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 436.0
-margin/top = 911.0
-margin/right = 737.0
-margin/bottom = 1025.0
+margin/left = 423.0
+margin/top = 777.0
+margin/right = 724.0
+margin/bottom = 891.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
+textures/normal = ExtResource( 7 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -106,20 +122,20 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 1194.0
-margin/top = 925.0
-margin/right = 1457.0
-margin/bottom = 1040.0
+margin/left = 1268.0
+margin/top = 747.0
+margin/right = 1531.0
+margin/bottom = 862.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 7 )
+textures/normal = ExtResource( 8 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 8 )
+stream/stream = ExtResource( 9 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0

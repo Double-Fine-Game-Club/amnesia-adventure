@@ -414,7 +414,7 @@ func run():
 			while stack.size() > 0 && !(stack[stack.size()-1].break_stop):
 				stack.remove(stack.size()-1)
 			stack.remove(stack.size()-1)
-	root.set_input_catch(false)
+	#root.set_input_catch(false)
 	loading_game = false
 
 func can_save():
