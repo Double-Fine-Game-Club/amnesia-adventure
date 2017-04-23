@@ -153,7 +153,7 @@ stream/buffering_ms = 500
 
 [node name="back_to_hub" type="Node2D" parent="."]
 
-[node name="return" type="TextureButton" parent="."]
+[node name="hub_button" type="TextureButton" parent="back_to_hub"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true

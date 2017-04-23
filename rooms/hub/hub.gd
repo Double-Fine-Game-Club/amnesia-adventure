@@ -1,4 +1,5 @@
-extends Control
+extends "res://globals/scene_base.gd"
+
 var current_scene
 
 func doug_pressed():

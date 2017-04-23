@@ -116,7 +116,7 @@ func _ready():
 	#._ready()
 	get_node("input_catch").connect("input_event", self, "input_event")
 	get_node("input_catch").set_size(Vector2(Globals.get("display/game_width"), Globals.get("display/game_height")))
-	get_node("animation").play("release_input")
+	#get_node("animation").play("release_input")
 	add_to_group("game")
 
 	call_deferred("setup_vm")

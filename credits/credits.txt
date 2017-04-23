@@ -1,0 +1,20 @@
+Amnesia Adventure
+
+Contributors
+
+TimeGentleman
+Jennifer McMurray
+flesk
+jctwood
+KGuNN
+Cheeseness
+kednar
+WavingPeople
+Mythalore
+etisdew
+
+See github.com/double-fine-game-club/amnesia-adventure for an up to date list of contributors and contributions
+
+Technologies
+
+This game uses the MIT licenced Godot engine. Visit godotengine.org for more information.

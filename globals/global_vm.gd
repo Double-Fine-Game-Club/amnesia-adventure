@@ -307,7 +307,7 @@ func add_level(p_level, p_root):
 	#return ret
 
 func run_event(p_event):
-	root.set_input_catch(true)
+#	root.set_input_catch(true)
 	get_tree().call_group(0, "hud", "set_tooltip", "")
 	add_level(p_event, true)
 
