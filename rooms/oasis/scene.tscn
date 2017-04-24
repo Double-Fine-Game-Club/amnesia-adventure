@@ -4,7 +4,7 @@
 [ext_resource path="res://rooms/oasis/sprites/oasis_bg.png" type="Texture" id=2]
 [ext_resource path="res://globals/background.gd" type="Script" id=3]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=4]
-[ext_resource path="res://rooms/test/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/wizard/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=6]
 [ext_resource path="res://globals/item_background.gd" type="Script" id=7]
 [ext_resource path="res://globals/background_area.gd" type="Script" id=8]
@@ -188,7 +188,7 @@ __meta__ = {
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 761.288, 509.059 )
+transform/pos = Vector2( 608, 373 )
 
 [node name="game" parent="." instance=ExtResource( 6 )]
 
