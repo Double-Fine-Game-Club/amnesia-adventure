@@ -133,6 +133,7 @@ placeholders = {
 [node name="sprite" type="AnimatedSprite" parent="."]
 
 transform/pos = Vector2( 5.2803, -49.2264 )
+transform/scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "default"
 
