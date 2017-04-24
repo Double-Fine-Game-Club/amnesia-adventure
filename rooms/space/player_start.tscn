@@ -2,12 +2,12 @@
 
 [ext_resource path="res://globals/player.gd" type="Script" id=1]
 [ext_resource path="res://characters/space/space_anims.gd" type="Script" id=2]
-[ext_resource path="res://characters/space/char_ked_idle.png" type="Texture" id=3]
-[ext_resource path="res://characters/space/char_ked_idle.png" type="Texture" id=4]
-[ext_resource path="res://characters/space/char_ked_move_1.png" type="Texture" id=5]
-[ext_resource path="res://characters/space/char_ked_move_2.png" type="Texture" id=6]
-[ext_resource path="res://characters/space/char_ked_move_1.png" type="Texture" id=7]
-[ext_resource path="res://characters/space/char_ked_move_2.png" type="Texture" id=8]
+[ext_resource path="res://characters/space/char_ked_idle_L.png" type="Texture" id=3]
+[ext_resource path="res://characters/space/char_ked_idle_R.png" type="Texture" id=4]
+[ext_resource path="res://characters/space/char_ked_move_L.png" type="Texture" id=5]
+[ext_resource path="res://characters/space/char_ked_move_L2.png" type="Texture" id=6]
+[ext_resource path="res://characters/space/char_ked_move_R.png" type="Texture" id=7]
+[ext_resource path="res://characters/space/char_ked_move_R2.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
