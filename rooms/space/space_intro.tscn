@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://rooms/space/space_intro.gd" type="Script" id=1]
 [ext_resource path="res://rooms/space/sprites/intro_bg.png" type="Texture" id=2]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/opensans72.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://globals/game.scn" type="PackedScene" id=4]
 
 [sub_resource type="CanvasItemShader" id=1]
 
@@ -40,19 +41,20 @@ stretch_mode = 0
 
 [node name="text" type="RichTextLabel" parent="."]
 
-rect/scale = Vector2( 4, 4 )
+rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 209.0
-margin/top = 229.0
-margin/right = 589.0
-margin/bottom = 244.0
+margin/left = 270.0
+margin/top = 670.0
+margin/right = 1510.0
+margin/bottom = 900.0
+custom_fonts/normal_font = ExtResource( 3 )
 bbcode/enabled = true
 bbcode/bbcode = "Remember that time the toilet flushed itself into Space..."
 visible_characters = -1
 
-[node name="game" parent="." instance=ExtResource( 3 )]
+[node name="game" parent="." instance=ExtResource( 4 )]
 
 
