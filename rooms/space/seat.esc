@@ -1,7 +1,32 @@
 :pick_up
 
-set_active screw2 false
+>	[has_pipe]
+	say player "Gotcha! Into my spacesuit pocket you go."
+	set_active seat false
 
 :look
 
-say player "A screw2"
+>	[!seat_line1]
+	say player "Hold on my dear, I’m coming for you!"
+	set_global seat_line1 true
+	set_global seat_line2 false
+	stop
+
+>	[!seat_line2]
+	say player "I can’t wait for you to caress my cheeks again!"
+	set_global seat_line2 true
+	set_global seat_line3 false
+	stop
+
+>	[!seat_line3]
+	say player "It’s the softest hard shell toilet ever made!"
+	set_global seat_line3 true
+	set_global seat_line4 false
+	stop
+
+>	[!seat_line4]
+	say player "Houston, we have a lid off!"
+	set_global seat_line4 true
+	set_global seat_line1 false
+	stop
+		

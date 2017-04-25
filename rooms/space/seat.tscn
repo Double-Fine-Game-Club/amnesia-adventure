@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://rooms/space/sprites/shitbag-kednar.png" type="Texture" id=1]
+[ext_resource path="res://rooms/space/sprites/sit-kednar.png" type="Texture" id=1]
 [ext_resource path="res://globals/item.gd" type="Script" id=2]
 
-[node name="bag" type="TextureFrame"]
+[node name="seat" type="TextureFrame"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -130.0
-margin/top = -150.0
-margin/right = 127.0
-margin/bottom = 106.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 375.0
+margin/bottom = 446.0
 texture = ExtResource( 1 )
 stretch_mode = 0
 script/script = ExtResource( 2 )
@@ -23,8 +23,8 @@ light_on_map = false
 tooltip = ""
 action = ""
 secondary_action = ""
-events_path = "res://rooms/space/bag.esc"
-global_id = "bag"
+events_path = "res://rooms/space/seat.esc"
+global_id = "seat"
 use_combine = false
 inventory = false
 use_action_menu = true
