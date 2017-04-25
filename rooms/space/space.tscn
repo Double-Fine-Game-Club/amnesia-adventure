@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-[gd_scene load_steps=20 format=1]
-=======
-[gd_scene load_steps=18 format=1]
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
+[gd_scene load_steps=23 format=1]
 
-[ext_resource path="res://globals/scene.gd" type="Script" id=1]
+[ext_resource path="res://rooms/space/space_1.gd" type="Script" id=1]
 [ext_resource path="res://rooms/space/sprites/scene_kednar_background.png" type="Texture" id=2]
 [ext_resource path="res://globals/background.gd" type="Script" id=3]
-<<<<<<< HEAD
 [ext_resource path="res://rooms/space/hotspot_cantmove.gd" type="Script" id=4]
 [ext_resource path="res://rooms/space/sprites/ship-kednar.png" type="Texture" id=5]
 [ext_resource path="res://rooms/space/sprites/screw-kednar.png" type="Texture" id=6]
@@ -17,33 +12,28 @@
 [ext_resource path="res://rooms/space/sprites/sit-kednar.png" type="Texture" id=10]
 [ext_resource path="res://rooms/space/sprites/pedals-kednar.png" type="Texture" id=11]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=12]
-=======
-[ext_resource path="res://rooms/space/sprites/ship-kednar.png" type="Texture" id=4]
-[ext_resource path="res://rooms/space/sprites/screw-kednar.png" type="Texture" id=5]
-[ext_resource path="res://globals/item.gd" type="Script" id=6]
-[ext_resource path="res://rooms/space/sprites/shitbag-kednar.png" type="Texture" id=7]
-[ext_resource path="res://rooms/space/sprites/hose-kednar.png" type="Texture" id=8]
-[ext_resource path="res://rooms/space/sprites/sit-kednar.png" type="Texture" id=9]
-[ext_resource path="res://rooms/space/sprites/pedals-kednar.png" type="Texture" id=10]
-[ext_resource path="res://globals/terrain.gd" type="Script" id=11]
-[ext_resource path="res://rooms/space/player.tscn" type="PackedScene" id=12]
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=13]
-[ext_resource path="res://music/meadow-jennibee.ogg" type="AudioStream" id=14]
-[ext_resource path="res://ui/hub_button.gd" type="Script" id=15]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=16]
-<<<<<<< HEAD
-[ext_resource path="res://characters/space/char_ked_start.png" type="Texture" id=17]
+[ext_resource path="res://ui/hub_button.gd" type="Script" id=14]
+[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=15]
+[ext_resource path="res://characters/space/char_ked_start.png" type="Texture" id=16]
+[ext_resource path="res://fonts/opensans72.fnt" type="BitmapFont" id=17]
+[ext_resource path="res://globals/dialog_player.tscn" type="PackedScene" id=18]
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1921.85, 1077.4, 1.85062, 1077.4, 11.8506, 237.402, 251.851, 237.402 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1931.85, 7.40248, 1921.85, 1077.4, 251.851, 237.402, 251.851, 7.40248 )
 
 [sub_resource type="GDScript" id=1]
 
 script/source = ""
 
 [sub_resource type="NavigationPolygon" id=2]
-=======
-
-[sub_resource type="NavigationPolygon" id=1]
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 
 vertices = Vector2Array( 1490.99, 544.874, 111.949, 558.833, 115.108, -271.228, 266.805, -271.228, 1477.66, -472.126, 329.707, -475.485 )
 polygons = [ IntArray( 0, 1, 2, 3 ), IntArray( 4, 0, 3, 5 ) ]
@@ -73,25 +63,23 @@ action = "walk"
 
 visibility/visible = false
 input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 4 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="Polygon2D" type="Polygon2D" parent="Click anywhere"]
+[node name="area" type="CollisionPolygon2D" parent="Click anywhere"]
 
-transform/pos = Vector2( 1.85062, -2.59752 )
-polygon = Vector2Array( 531.851, -62.5975, 251.851, -42.5975, 281.851, 217.402, -58.1494, 217.402, -18.1494, 1117.4, 1961.85, 1107.4, 1941.85, -42.5975 )
-uv = Vector2Array(  )
-color = Color( 1, 1, 1, 0 )
-vertex_colors = ColorArray(  )
-offset = Vector2( 0, 0 )
-texture/texture = null
-texture/offset = Vector2( 0, 0 )
-texture/scale = Vector2( 1, 1 )
-texture/rotation = 0.0
-invert/enable = false
-invert/border = 100.0
+build_mode = 0
+polygon = Vector2Array( 1931.85, 7.40248, 251.851, 7.40248, 251.851, 237.402, 11.8506, 237.402, 1.85062, 1077.4, 1921.85, 1077.4 )
+shape_range = Vector2( 0, 1 )
+trigger = false
 script/script = ExtResource( 4 )
 
 [node name="ship-kednar" type="Sprite" parent="."]
@@ -100,7 +88,7 @@ transform/pos = Vector2( 316.138, 849.901 )
 transform/scale = Vector2( 0.56919, 0.56919 )
 texture = ExtResource( 5 )
 
-[node name="screw5" type="TextureFrame" parent="."]
+[node name="screw" type="TextureFrame" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -113,26 +101,8 @@ margin/bottom = 291.0
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 5
-script/script = ExtResource( 6 )
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "Screw5"
-action = "pick_up"
-secondary_action = "look"
-events_path = "res://rooms/space/screw5.esc"
-global_id = "screw5"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
-placeholders = {
-
-}
-use_custom_z = false
+script/script = ExtResource( 3 )
+action = "walk"
 
 [node name="screw1" type="TextureFrame" parent="."]
 
@@ -141,40 +111,15 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-<<<<<<< HEAD
 margin/left = 1382.0
 margin/top = 757.0
 margin/right = 1498.0
 margin/bottom = 888.0
-=======
-margin/left = 1372.0
-margin/top = 487.0
-margin/right = 1488.0
-margin/bottom = 618.0
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 0
-script/script = ExtResource( 6 )
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "Screw1"
-action = "pick_up"
-secondary_action = "look"
-events_path = "res://rooms/space/screw1.esc"
-global_id = "screw1"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
-placeholders = {
-
-}
-use_custom_z = false
+script/script = ExtResource( 3 )
+action = "walk"
 
 [node name="screw4" type="TextureFrame" parent="."]
 
@@ -190,7 +135,6 @@ margin/bottom = 777.0
 texture = ExtResource( 8 )
 expand = true
 stretch_mode = 0
-<<<<<<< HEAD
 script/script = ExtResource( 9 )
 animations = SubResource( 1 )
 speed = 300
@@ -201,18 +145,6 @@ action = ""
 secondary_action = ""
 events_path = ""
 global_id = ""
-=======
-script/script = ExtResource( 6 )
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "Screw4"
-action = "pick_up"
-secondary_action = "look"
-events_path = "res://rooms/space/screw4.esc"
-global_id = "screw4"
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 use_combine = false
 inventory = false
 use_action_menu = true
@@ -231,41 +163,15 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-<<<<<<< HEAD
 margin/left = 775.0
 margin/top = 996.0
 margin/right = 942.0
 margin/bottom = 1184.0
 texture = ExtResource( 10 )
-=======
-margin/left = 1205.0
-margin/top = 946.0
-margin/right = 1372.0
-margin/bottom = 1134.0
-texture = ExtResource( 9 )
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 expand = true
 stretch_mode = 0
-script/script = ExtResource( 6 )
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "Screw2"
-action = "pick_up"
-secondary_action = "look"
-events_path = "res://rooms/space/screw2.esc"
-global_id = "screw2"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
-placeholders = {
-
-}
-use_custom_z = false
+script/script = ExtResource( 3 )
+action = "walk"
 
 [node name="screw3" type="TextureFrame" parent="."]
 
@@ -274,52 +180,21 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-<<<<<<< HEAD
 margin/left = 682.0
 margin/top = 235.0
 margin/right = 849.0
 margin/bottom = 423.0
 texture = ExtResource( 11 )
-=======
-margin/left = 762.0
-margin/top = 205.0
-margin/right = 929.0
-margin/bottom = 393.0
-texture = ExtResource( 10 )
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 expand = true
 stretch_mode = 0
-script/script = ExtResource( 6 )
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "Screw3"
-action = "pick_up"
-secondary_action = "look"
-events_path = "res://rooms/space/screw3.esc"
-global_id = "screw3"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
-placeholders = {
-
-}
-use_custom_z = false
+script/script = ExtResource( 3 )
+action = "walk"
 
 [node name="terrain" type="Navigation2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -99.9615, 549.717 )
 transform/scale = Vector2( 0.950644, 0.961125 )
-<<<<<<< HEAD
 script/script = ExtResource( 12 )
-=======
-script/script = ExtResource( 11 )
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 scales = null
 lightmap = null
 bitmaps_scale = Vector2( 2.35, 1.5 )
@@ -336,25 +211,7 @@ transform/scale = Vector2( 1.45621, 1.06989 )
 navpoly = SubResource( 2 )
 enabled = true
 
-<<<<<<< HEAD
-=======
-[node name="player" parent="." instance=ExtResource( 12 )]
-
-transform/pos = Vector2( 843.11, 553.001 )
-
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
 [node name="game" parent="." instance=ExtResource( 13 )]
-
-[node name="StreamPlayer" type="StreamPlayer" parent="."]
-
-stream/stream = ExtResource( 14 )
-stream/play = false
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
 
 [node name="back_to_hub" type="Control" parent="."]
 
@@ -366,7 +223,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-script/script = ExtResource( 15 )
+script/script = ExtResource( 14 )
 
 [node name="hub_button" type="TextureButton" parent="back_to_hub"]
 
@@ -381,17 +238,31 @@ margin/bottom = 186.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 16 )
+textures/normal = ExtResource( 15 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
-<<<<<<< HEAD
 [node name="char_ked_start_R" type="Sprite" parent="."]
 
 transform/pos = Vector2( 971.851, 527.402 )
 transform/scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
-=======
->>>>>>> a2337454440bfed5f67c962f36f368978a45d7d8
+[node name="text" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 912.0
+margin/top = 307.0
+margin/right = 1482.0
+margin/bottom = 407.0
+custom_fonts/normal_font = ExtResource( 17 )
+bbcode/enabled = true
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="dialog_player" parent="." instance=ExtResource( 18 )]
+
 

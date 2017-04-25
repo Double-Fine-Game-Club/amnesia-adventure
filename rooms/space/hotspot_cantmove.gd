@@ -1,11 +1,10 @@
-#extends CollisionPolygon2D
+extends CollisionPolygon2D
 
-#
-#signal cantmove
+signal cantmove
 
-#func _input(event):
-#	if event.type == InputEvent.MOUSE_BUTTON && event.pressed:
-#		emit_signal("cantmove")
-#
-#func _ready():
-#	set_process_input(true)
+func _input(event):
+	if event.type == InputEvent.MOUSE_BUTTON && event.pressed:
+		emit_signal("cantmove")
+
+func _ready():
+	set_process_input(true)
