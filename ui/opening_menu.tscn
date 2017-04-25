@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://ui/opening_menu.gd" type="Script" id=1]
-[ext_resource path="res://art/concept-art.png" type="Texture" id=2]
+[ext_resource path="res://art/wavingpeople-concept.png" type="Texture" id=2]
 [ext_resource path="res://art/menu-wavingpeople-and-mythalore.png" type="Texture" id=3]
 [ext_resource path="res://art/logo-wavingpeople-and-mythalore.png" type="Texture" id=4]
 [ext_resource path="res://art/play-button-mythalore.png" type="Texture" id=5]
@@ -57,10 +57,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 345.0
-margin/top = 36.0
-margin/right = 1618.0
-margin/bottom = 584.0
+margin/left = 149.0
+margin/top = 71.0
+margin/right = 1422.0
+margin/bottom = 619.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
@@ -71,10 +71,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 429.0
-margin/top = 647.0
-margin/right = 708.0
-margin/bottom = 765.0
+margin/left = 349.0
+margin/top = 671.0
+margin/right = 576.0
+margin/bottom = 789.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -88,10 +88,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 1225.0
-margin/top = 628.0
-margin/right = 1569.0
-margin/bottom = 742.0
+margin/left = 1003.0
+margin/top = 672.0
+margin/right = 1347.0
+margin/bottom = 786.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -105,10 +105,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 423.0
-margin/top = 777.0
-margin/right = 724.0
-margin/bottom = 891.0
+margin/left = 236.0
+margin/top = 829.0
+margin/right = 537.0
+margin/bottom = 943.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -122,10 +122,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 1268.0
-margin/top = 747.0
-margin/right = 1531.0
-margin/bottom = 862.0
+margin/left = 1148.0
+margin/top = 827.0
+margin/right = 1411.0
+margin/bottom = 942.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
