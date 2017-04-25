@@ -10,8 +10,8 @@ var vm_size = Vector2(0, 0)
 var game_size
 var screen_ofs = Vector2(0, 0)
 
-#func set_input_catch(p_catch):
-#	telon.set_input_catch(p_catch)
+func set_input_catch(p_catch):
+	telon.set_input_catch(p_catch)
 
 func clear_scene():
 	if current == null:
@@ -129,7 +129,7 @@ func load_telon():
 	var tpath = Globals.get("platform/telon")
 	var tres = vm.res_cache.get_resource(tpath)
 
-	#get_node("layers/telon/telon").replace_by_instance(tres)
+	get_node("layers/telon/telon").replace_by_instance(tres)
 	telon = get_node("layers/telon/telon")
 
 func _ready():
