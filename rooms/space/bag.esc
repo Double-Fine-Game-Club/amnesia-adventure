@@ -1,5 +1,25 @@
 :pick_up
-set_active bag false
+>	[has_pipe]
+	say player "Careful now, we don’t want any spillage."
+	set_active bag false
+	set_global has_bag true
 
 :look
-say player
+
+>	[!bag_line1]
+	say player "The sanitary waste receptacle. An integral part of every mission to the Lower End Orbit"
+	set_global bag_line1 true
+	set_global bag_line2 false
+	stop
+
+>	[!bag_line2]
+	say player "Really though, it’s just a bag of poop."
+	set_global bag_line2 true
+	set_global bag_line3 false
+	stop
+
+>	[!bag_line3]
+	say player "Yup, still poop there."
+	set_global bag_line3 true
+	set_global bag_line1 false
+	stop

@@ -1,6 +1,7 @@
 :pick_up
 say player "I should be able to move around with this!"
 set_active pipe false
+set_global has_pipe true
 
 :look
 say player "That’s my number one fluid evacuation hose!"
