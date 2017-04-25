@@ -1,19 +1,18 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://rooms/space/sprites/scene_kednar_background.png" type="Texture" id=2]
 [ext_resource path="res://globals/background.gd" type="Script" id=3]
 [ext_resource path="res://rooms/space/sprites/ship-kednar.png" type="Texture" id=4]
-[ext_resource path="res://rooms/space/sprites/screw-kednar.png" type="Texture" id=5]
-[ext_resource path="res://rooms/space/sprites/shitbag-kednar.png" type="Texture" id=6]
-[ext_resource path="res://rooms/space/sprites/sit-kednar.png" type="Texture" id=7]
-[ext_resource path="res://rooms/space/sprites/pedals-kednar.png" type="Texture" id=8]
-[ext_resource path="res://globals/terrain.gd" type="Script" id=9]
-[ext_resource path="res://rooms/space/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://rooms/space/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rooms/space/sprites/screw-kednar.png" type="Texture" id=6]
+[ext_resource path="res://rooms/space/sprites/shitbag-kednar.png" type="Texture" id=7]
+[ext_resource path="res://rooms/space/sprites/sit-kednar.png" type="Texture" id=8]
+[ext_resource path="res://rooms/space/sprites/pedals-kednar.png" type="Texture" id=9]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=10]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=11]
-[ext_resource path="res://music/meadow-jennibee.ogg" type="AudioStream" id=12]
-[ext_resource path="res://ui/hub_button.gd" type="Script" id=13]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=14]
+[ext_resource path="res://ui/hub_button.gd" type="Script" id=12]
+[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -41,10 +40,14 @@ stretch_mode = 0
 script/script = ExtResource( 3 )
 action = "walk"
 
-[node name="ship-kednar" type="Sprite" parent="."]
+[node name="ship" type="Sprite" parent="."]
 
 transform/pos = Vector2( 385, 814 )
 texture = ExtResource( 4 )
+
+[node name="player" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1021.85, 537.402 )
 
 [node name="screw" type="TextureFrame" parent="."]
 
@@ -56,13 +59,13 @@ margin/left = 1322.0
 margin/top = 197.0
 margin/right = 1402.0
 margin/bottom = 271.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 script/script = ExtResource( 3 )
 action = "walk"
 
-[node name="screw1" type="TextureFrame" parent="."]
+[node name="bag" type="TextureFrame" parent="."]
 
 rect/rotation = 15.0
 focus/ignore_mouse = false
@@ -73,13 +76,13 @@ margin/left = 1372.0
 margin/top = 487.0
 margin/right = 1488.0
 margin/bottom = 618.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 0
 script/script = ExtResource( 3 )
 action = "walk"
 
-[node name="screw2" type="TextureFrame" parent="."]
+[node name="seat" type="TextureFrame" parent="."]
 
 rect/rotation = 120.0
 focus/ignore_mouse = false
@@ -90,13 +93,13 @@ margin/left = 1205.0
 margin/top = 946.0
 margin/right = 1372.0
 margin/bottom = 1134.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 expand = true
 stretch_mode = 0
 script/script = ExtResource( 3 )
 action = "walk"
 
-[node name="screw3" type="TextureFrame" parent="."]
+[node name="pedals" type="TextureFrame" parent="."]
 
 rect/rotation = 44.9999
 focus/ignore_mouse = false
@@ -107,7 +110,7 @@ margin/left = 762.0
 margin/top = 205.0
 margin/right = 929.0
 margin/bottom = 393.0
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 0
 script/script = ExtResource( 3 )
@@ -117,7 +120,7 @@ action = "walk"
 
 transform/pos = Vector2( -99.9615, 549.717 )
 transform/scale = Vector2( 0.950644, 0.961125 )
-script/script = ExtResource( 9 )
+script/script = ExtResource( 10 )
 scales = null
 lightmap = null
 bitmaps_scale = Vector2( 2.35, 1.5 )
@@ -134,22 +137,7 @@ transform/scale = Vector2( 1.45621, 1.06989 )
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="player" parent="." instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 951.401, 576.486 )
-
 [node name="game" parent="." instance=ExtResource( 11 )]
-
-[node name="StreamPlayer" type="StreamPlayer" parent="."]
-
-stream/stream = ExtResource( 12 )
-stream/play = false
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
 
 [node name="back_to_hub" type="Control" parent="."]
 
@@ -161,7 +149,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-script/script = ExtResource( 13 )
+script/script = ExtResource( 12 )
 
 [node name="hub_button" type="TextureButton" parent="back_to_hub"]
 
@@ -176,7 +164,7 @@ margin/bottom = 186.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 14 )
+textures/normal = ExtResource( 13 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
