@@ -1,0 +1,7 @@
+:pick_up
+
+set_active screw false
+
+:look
+
+say player "A screw"

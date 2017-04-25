@@ -4,6 +4,7 @@ var vm
 var root
 var confirm_popup = null
 var labels = []
+var current_scene
 
 func load_autosave():
 	vm.load_autosave()
@@ -64,6 +65,8 @@ func _on_exit_pressed():
 	button_clicked()
 	#confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
 	#confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
+	current_scene = root.get_child(root.get_child_count() -1)
+	current_scene.queue_free()
 	get_tree().quit();
 	
 func _quit_game(p_confirm):
