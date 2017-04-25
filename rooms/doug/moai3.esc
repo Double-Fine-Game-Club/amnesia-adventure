@@ -1,0 +1,8 @@
+:pick_up
+
+say player "A dog and a rabbit told me these guys could talk.  I guess they were wrong."
+
+:look
+
+say player "All of these Moai seem to look the same. Weird."
+

@@ -1,0 +1,7 @@
+:pick_up
+
+say player "Hello Mr. Moai head."
+
+:look
+
+say player "That's a big head."

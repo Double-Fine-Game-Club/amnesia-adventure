@@ -7,6 +7,8 @@
 
 resources = [ StringArray( "default" ), [ ExtResource( 1 ) ] ]
 script/script = ExtResource( 2 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
 
 
