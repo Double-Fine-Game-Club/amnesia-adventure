@@ -16,6 +16,11 @@ animations = [ {
 "loop": true,
 "name": "space_anims",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "frozen_start",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -69,7 +74,7 @@ tracks/0/keys = {
 "values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 
 resource/name = "pick_up"
 length = 1.8
@@ -86,7 +91,7 @@ tracks/0/keys = {
 "values": [ 0, 3, 4, 0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 
 length = 2.0
 loop = true
@@ -102,7 +107,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 
 length = 2.0
 loop = true
@@ -161,9 +166,9 @@ root/root = NodePath("..")
 anims/idle_down = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
 anims/idle_up = SubResource( 4 )
-anims/pick_up = SubResource( 9 )
-anims/walk_down = SubResource( 10 )
-anims/walk_right = SubResource( 11 )
+anims/pick_up = SubResource( 5 )
+anims/walk_down = SubResource( 6 )
+anims/walk_right = SubResource( 7 )
 anims/walk_up = SubResource( 8 )
 playback/active = true
 playback/speed = 6.0

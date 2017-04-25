@@ -1,7 +1,6 @@
 :pick_up
-
+say player "I should be able to move around with this!"
 set_active pipe false
 
 :look
-
-say pipe "ASLDKJASDLK ASJDLK ASJDLKAJS DLKASJ DLKASJDLKAS Ja pipe"
+say player "That’s my number one fluid evacuation hose!"
