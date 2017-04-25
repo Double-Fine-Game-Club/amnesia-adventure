@@ -1,0 +1,8 @@
+:pick_up
+
+say player "So, Moai. What do you guys do for fun?"
+
+:look
+
+say player "That's the second biggest moai head I've ever seen."
+

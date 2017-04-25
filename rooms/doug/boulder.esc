@@ -1,0 +1,8 @@
+:pick_up
+
+say player "I'm not strong enough to pick that up."
+
+
+:look
+
+say player "That's a big boulder."

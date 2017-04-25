@@ -96,6 +96,7 @@ scale_on_map = false
 light_on_map = false
 tooltip = ""
 action = ""
+secondary_action = ""
 events_path = ""
 global_id = ""
 use_combine = false
