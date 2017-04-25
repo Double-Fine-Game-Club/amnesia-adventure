@@ -17,7 +17,7 @@ func _input(event):
 
 func _ready():
 	# Preload main scene
-	space_scene = preload("res://rooms/space/space.tscn")
+	space_scene = preload("res://rooms/space/space_1.tscn")
 	set_process_input(true)
 	set_process(true)
 

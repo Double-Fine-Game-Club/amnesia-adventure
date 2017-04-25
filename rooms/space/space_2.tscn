@@ -48,7 +48,7 @@ texture = ExtResource( 4 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1121.85, 507.402 )
+transform/pos = Vector2( 1061.85, 517.402 )
 
 [node name="screw" type="TextureFrame" parent="."]
 

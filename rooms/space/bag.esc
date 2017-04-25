@@ -1,7 +1,16 @@
-:pick_up
+set_global pipe_line1 true
+set_global pipe_line2 false
+set_global pipe_line3 false
+set_global pipe_line4 false
 
-set_active screw1 false
+:pick_up
+	set_active bag false
 
 :look
-
-say player "A screw1"
+	say player "A pipe 1" [pipe_line1]
+	set_global pipe_line1 false
+	set_global pipe_line2 true
+	say player "A pipe 2" [pipe_line2]
+	set_global pipe_line2 false
+	set_global pipe_line1 true
+	

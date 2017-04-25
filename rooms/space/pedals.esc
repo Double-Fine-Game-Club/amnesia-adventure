@@ -1,6 +1,6 @@
 :pick_up
 
-set_active screw3 false
+set_active pedals false
 
 :look
 

@@ -69,7 +69,7 @@ tracks/0/keys = {
 "values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 resource/name = "pick_up"
 length = 1.8
@@ -86,24 +86,7 @@ tracks/0/keys = {
 "values": [ 0, 3, 4, 0 ]
 }
 
-[sub_resource type="Animation" id=5]
-
-resource/name = "walk_down"
-length = 2.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 1 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 1,
-"values": [ 1, 2 ]
-}
-
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=10]
 
 length = 2.0
 loop = true
@@ -119,7 +102,23 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=11]
+
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=8]
 
 length = 2.0
 loop = true
@@ -162,10 +161,10 @@ root/root = NodePath("..")
 anims/idle_down = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
 anims/idle_up = SubResource( 4 )
-anims/pick_up = SubResource( 8 )
-anims/walk_down = SubResource( 5 )
-anims/walk_right = SubResource( 6 )
-anims/walk_up = SubResource( 7 )
+anims/pick_up = SubResource( 9 )
+anims/walk_down = SubResource( 10 )
+anims/walk_right = SubResource( 11 )
+anims/walk_up = SubResource( 8 )
 playback/active = true
 playback/speed = 6.0
 blend_times = [  ]

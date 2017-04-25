@@ -1,0 +1,7 @@
+:pick_up
+
+set_active pipe false
+
+:look
+
+say pipe "ASLDKJASDLK ASJDLK ASJDLKAJS DLKASJ DLKASJDLKAS Ja pipe"
