@@ -4,6 +4,9 @@
 	say player "Gotcha! Into my spacesuit pocket you go."
 	set_active seat false
 	set_global has_seat true
+>	[!has_pipe]
+	say player "I need some way to aim my thrust!"
+	stop
 
 :look
 
