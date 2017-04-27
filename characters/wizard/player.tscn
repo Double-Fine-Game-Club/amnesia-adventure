@@ -32,7 +32,7 @@ placeholders = {
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0, -40.9261 )
+transform/pos = Vector2( 3.3241, -81.9233 )
 texture = ExtResource( 3 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
