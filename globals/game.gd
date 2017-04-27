@@ -28,18 +28,17 @@ func set_mode(p_mode):
 func mouse_enter(obj):
 	var text
 	var tt = obj.get_tooltip()
-	if current_tool != null:
-		text = "use.combine_id"
-		if current_action != "":
-			text = tr(current_action + ".combine_id")
-		text = text.replace("%2", tr(tt))
-		text = text.replace("%1", tr(current_tool.get_tooltip()))
-	elif obj.inventory:
+
+	#TODO: Fix inventory combination
+	#if current_action == "pick_up" && text != null:
+		#text = tr(current_action + ".combine_id")
+		#text = text.replace("%2", tr(tt))
+		#text = text.replace("%1", tr(current_tool.get_tooltip()))
+	if obj.inventory:
 		var action = inventory.get_action()
 		if action == "":
 			action = current_action
-		text = tr(action + ".id")
-		text = text.replace("%1", tr(tt))
+		text = tr("Use " + tt + " with")
 	else:
 		text = tt
 	get_tree().call_group(0, "hud", "set_tooltip", text)

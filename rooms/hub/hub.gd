@@ -16,4 +16,3 @@ func _ready():
 
 	get_node("doug").connect("pressed", self, "doug_pressed")
 	get_node("clock").connect("pressed", self, "clock_pressed")
-	
