@@ -2,18 +2,17 @@
 
 [ext_resource path="res://ui/opening_menu.gd" type="Script" id=1]
 [ext_resource path="res://art/wavingpeople-concept.png" type="Texture" id=2]
-[ext_resource path="res://art/wall-mythalore-and-jennibee.png" type="Texture" id=3]
-[ext_resource path="res://art/menu-wavingpeople-and-mythalore.png" type="Texture" id=4]
-[ext_resource path="res://art/upper-curtain-mythalore-and-jennibee.png" type="Texture" id=5]
-[ext_resource path="res://art/curtain-mythalore-and-jennibee.png" type="Texture" id=6]
-[ext_resource path="res://art/character-foreground-wavingpeople-and-jennibee.png" type="Texture" id=7]
+[ext_resource path="res://art/wall-mythalore-and-jenni.png" type="Texture" id=3]
+[ext_resource path="res://art/window-mythalore.png" type="Texture" id=4]
+[ext_resource path="res://art/upper-curtain-mythalore-and-jenni.png" type="Texture" id=5]
+[ext_resource path="res://art/curtain-mythalore-and-jenni.png" type="Texture" id=6]
+[ext_resource path="res://art/foreground-wavingpeople-and-jenni.png" type="Texture" id=7]
 [ext_resource path="res://art/logo-wavingpeople-and-mythalore.png" type="Texture" id=8]
 [ext_resource path="res://art/play-button-mythalore.png" type="Texture" id=9]
 [ext_resource path="res://art/options-button-mythalore.png" type="Texture" id=10]
 [ext_resource path="res://art/credits-button-mythalore.png" type="Texture" id=11]
 [ext_resource path="res://art/quit-button-mythalore.png" type="Texture" id=12]
 [ext_resource path="res://music/menu-of-amnesia-jenni.ogg" type="AudioStream" id=13]
-
 
 [node name="main_menu" type="Control"]
 
@@ -64,8 +63,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 919.0
 margin/top = 476.0
-margin/right = 2839.0
-margin/bottom = 1556.0
+margin/right = 1919.0
+margin/bottom = 1532.0
 texture = ExtResource( 4 )
 stretch_mode = 0
 
@@ -105,9 +104,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -3.0
+margin/left = 0.0
 margin/top = 2.0
-margin/right = 1917.0
+margin/right = 1920.0
 margin/bottom = 1082.0
 texture = ExtResource( 7 )
 stretch_mode = 0

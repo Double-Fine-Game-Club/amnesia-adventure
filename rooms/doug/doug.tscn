@@ -1,18 +1,19 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
-[ext_resource path="res://music/meadow-jenni.ogg" type="AudioStream" id=2]
-[ext_resource path="res://rooms/doug/sprites/doug-bg-jennibee.png" type="Texture" id=3]
-[ext_resource path="res://globals/background.gd" type="Script" id=4]
-[ext_resource path="res://globals/terrain.gd" type="Script" id=5]
-[ext_resource path="res://rooms/doug/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://rooms/doug/moai3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://rooms/doug/boulder.tscn" type="PackedScene" id=8]
-[ext_resource path="res://rooms/doug/moai1.tscn" type="PackedScene" id=9]
-[ext_resource path="res://rooms/doug/moai2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://rooms/doug/sprites/doug-bg-jennibee.png" type="Texture" id=2]
+[ext_resource path="res://globals/background.gd" type="Script" id=3]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=4]
+[ext_resource path="res://rooms/doug/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rooms/doug/moai3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://rooms/doug/boulder.tscn" type="PackedScene" id=7]
+[ext_resource path="res://rooms/doug/moai1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://rooms/doug/moai2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://rooms/doug/sprites/board-jennibee.png" type="Texture" id=10]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=11]
 [ext_resource path="res://ui/hub_button.gd" type="Script" id=12]
 [ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=13]
+[ext_resource path="res://music/meadow-jenni.ogg" type="AudioStream" id=14]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -24,17 +25,6 @@ outlines = [ Vector2Array( 414.945, 555.219, 766.377, 567.042, 1204.89, 557.953,
 
 script/script = ExtResource( 1 )
 
-[node name="StreamPlayer" type="StreamPlayer" parent="."]
-
-stream/stream = ExtResource( 2 )
-stream/play = false
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
-
 [node name="background" type="TextureFrame" parent="."]
 
 focus/ignore_mouse = false
@@ -45,15 +35,15 @@ margin/left = -2.0
 margin/top = 0.0
 margin/right = 1918.0
 margin/bottom = 1080.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 stretch_mode = 0
-script/script = ExtResource( 4 )
+script/script = ExtResource( 3 )
 action = "walk"
 
 [node name="terrain" type="Navigation2D" parent="."]
 
 transform/pos = Vector2( -79.8759, 367.75 )
-script/script = ExtResource( 5 )
+script/script = ExtResource( 4 )
 scales = null
 lightmap = null
 bitmaps_scale = Vector2( 2.35, 1.5 )
@@ -68,18 +58,18 @@ transform/pos = Vector2( -76.7919, -553.208 )
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="player" parent="." instance=ExtResource( 6 )]
+[node name="player" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 979.886, 588.869 )
 z/z = 588
 
-[node name="moai1" parent="." instance=ExtResource( 7 )]
+[node name="moai1" parent="." instance=ExtResource( 6 )]
 
 margin/left = 1522.0
 margin/top = 106.0
 margin/right = 1685.0
 margin/bottom = 412.0
-action = "pick_up"
+action = "use"
 secondary_action = "look"
 interact_angle = 270
 
@@ -88,14 +78,15 @@ interact_angle = 270
 transform/pos = Vector2( -6.30699, 319.164 )
 transform/scale = Vector2( 0.684957, 1.02744 )
 
-[node name="boulder" parent="." instance=ExtResource( 8 )]
+[node name="boulder" parent="." instance=ExtResource( 7 )]
 
 margin/left = 1140.0
 margin/top = 260.0
 margin/right = 1464.0
 margin/bottom = 425.0
-action = "use"
+action = "pick_up"
 secondary_action = "look"
+use_combine = true
 interact_angle = 90
 
 [node name="interact_pos" type="Position2D" parent="boulder"]
@@ -103,13 +94,13 @@ interact_angle = 90
 transform/pos = Vector2( -3.56165, 169.164 )
 transform/scale = Vector2( 0.684958, 1.36991 )
 
-[node name="moai2" parent="." instance=ExtResource( 9 )]
+[node name="moai2" parent="." instance=ExtResource( 8 )]
 
 margin/left = 327.0
 margin/top = 95.0
 margin/right = 490.0
 margin/bottom = 401.0
-action = "pick_up"
+action = "use"
 secondary_action = "look"
 interact_angle = 270
 
@@ -118,13 +109,13 @@ interact_angle = 270
 transform/pos = Vector2( 6.74304, 310.74 )
 transform/scale = Vector2( 0.171232, 1.02743 )
 
-[node name="moai3" parent="." instance=ExtResource( 10 )]
+[node name="moai3" parent="." instance=ExtResource( 9 )]
 
 margin/left = 857.0
 margin/top = 88.0
 margin/right = 1020.0
 margin/bottom = 394.0
-action = "pick_up"
+action = "use"
 secondary_action = "look"
 interact_angle = 90
 
@@ -132,6 +123,28 @@ interact_angle = 90
 
 transform/pos = Vector2( 7.19824, 311.452 )
 transform/scale = Vector2( 1, -1.88363 )
+
+[node name="board" parent="." instance=ExtResource( 9 )]
+
+margin/left = 206.0
+margin/top = 568.0
+margin/right = 302.0
+margin/bottom = 670.0
+texture = ExtResource( 10 )
+tooltip = "Board"
+action = "pick_up"
+secondary_action = "look"
+events_path = "res://rooms/doug/board.esc"
+global_id = "board"
+interact_angle = 90
+placeholders = {
+
+}
+
+[node name="interact_pos" type="Position2D" parent="board"]
+
+transform/pos = Vector2( 38.8302, 129.086 )
+transform/scale = Vector2( -1.19868, 2.05487 )
 
 [node name="game" parent="." instance=ExtResource( 11 )]
 
@@ -163,5 +176,16 @@ shortcut = null
 textures/normal = ExtResource( 13 )
 params/resize_mode = 0
 params/stretch_mode = 0
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 14 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 
