@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://rooms/hub/hub.gd" type="Script" id=1]
 [ext_resource path="res://rooms/hub/sprites/hub-timegentleman.png" type="Texture" id=2]
-[ext_resource path="res://rooms/hub/sprites/doug-doll-jennibee.png" type="Texture" id=3]
-[ext_resource path="res://rooms/hub/sprites/clock-taekon.png" type="Texture" id=4]
-[ext_resource path="res://music/groovin-hub-jenni.ogg" type="AudioStream" id=5]
+[ext_resource path="res://rooms/space/sprites/screw-kednar.png" type="Texture" id=3]
+[ext_resource path="res://rooms/hub/sprites/doug-doll-jennibee.png" type="Texture" id=4]
+[ext_resource path="res://rooms/hub/sprites/clock-taekon.png" type="Texture" id=5]
+[ext_resource path="res://rooms/hub/space_hotspot.gd" type="Script" id=6]
+[ext_resource path="res://music/groovin-hub-jenni.ogg" type="AudioStream" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1660, 110, 1690, 80, 1730, 90, 1770, 120, 1791.44, 183.829, 1788.92, 249.285, 1761.23, 279.495, 1710, 280, 1670, 240, 1650, 180 )
 
 [node name="main_menu" type="Control"]
 
@@ -32,6 +39,12 @@ margin/bottom = 1080.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 
+[node name="screw-kednar" type="Sprite" parent="logo"]
+
+transform/pos = Vector2( 410, 480 )
+transform/scale = Vector2( 0.339744, 0.339744 )
+texture = ExtResource( 3 )
+
 [node name="doug" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
@@ -45,7 +58,7 @@ margin/bottom = 374.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
+textures/normal = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -62,13 +75,34 @@ margin/bottom = 483.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 4 )
+textures/normal = ExtResource( 5 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
+[node name="space" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 0.488281, -1310, 400 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="area" type="CollisionPolygon2D" parent="space"]
+
+transform/pos = Vector2( -1310, 400 )
+transform/scale = Vector2( 1, 0.488281 )
+build_mode = 0
+polygon = Vector2Array( 1650, 180, 1670, 240, 1710, 280, 1761.23, 279.495, 1788.92, 249.285, 1791.44, 183.829, 1770, 120, 1730, 90, 1690, 80, 1660, 110 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+script/script = ExtResource( 6 )
+
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 5 )
+stream/stream = ExtResource( 7 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0

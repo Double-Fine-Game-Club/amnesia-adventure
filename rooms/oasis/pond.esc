@@ -1,0 +1,7 @@
+:look
+
+say player "Looks like a pond."
+
+:use
+
+say player "I don't want to go for a swim."

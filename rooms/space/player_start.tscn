@@ -1,20 +1,15 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://globals/player.gd" type="Script" id=1]
 [ext_resource path="res://characters/space/space_anims.gd" type="Script" id=2]
-[ext_resource path="res://characters/space/char_ked_idle.png" type="Texture" id=3]
-[ext_resource path="res://characters/space/char_ked_move_1.png" type="Texture" id=4]
-[ext_resource path="res://characters/space/char_ked_move_2.png" type="Texture" id=5]
-[ext_resource path="res://characters/space/char_ked_pick_1.png" type="Texture" id=6]
-[ext_resource path="res://characters/space/char_ked_pick_2.png" type="Texture" id=7]
-[ext_resource path="res://characters/space/char_ked_start.png" type="Texture" id=8]
+[ext_resource path="res://characters/space/char_ked_start.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "space_anims",
+"name": "space_1",
 "speed": 5.0
 } ]
 
@@ -69,7 +64,7 @@ tracks/0/keys = {
 "values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 
 resource/name = "pick_up"
 length = 1.8
@@ -86,7 +81,7 @@ tracks/0/keys = {
 "values": [ 0, 3, 4, 0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 
 length = 2.0
 loop = true
@@ -102,7 +97,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 
 length = 2.0
 loop = true
@@ -151,7 +146,7 @@ placeholders = {
 transform/pos = Vector2( -8.3234, 55.5224 )
 transform/scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-animation = "space_anims"
+animation = "space_1"
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -161,9 +156,9 @@ root/root = NodePath("..")
 anims/idle_down = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
 anims/idle_up = SubResource( 4 )
-anims/pick_up = SubResource( 9 )
-anims/walk_down = SubResource( 10 )
-anims/walk_right = SubResource( 11 )
+anims/pick_up = SubResource( 5 )
+anims/walk_down = SubResource( 6 )
+anims/walk_right = SubResource( 7 )
 anims/walk_up = SubResource( 8 )
 playback/active = true
 playback/speed = 6.0
