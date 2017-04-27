@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://rooms/hub/hub.gd" type="Script" id=1]
 [ext_resource path="res://rooms/hub/sprites/hub-timegentleman.png" type="Texture" id=2]
 [ext_resource path="res://rooms/hub/sprites/doug-doll-jennibee.png" type="Texture" id=3]
 [ext_resource path="res://rooms/hub/sprites/clock-taekon.png" type="Texture" id=4]
+[ext_resource path="res://music/groovin-hub-jenni.ogg" type="AudioStream" id=5]
 
 [node name="main_menu" type="Control"]
 
@@ -64,5 +65,16 @@ shortcut = null
 textures/normal = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 
