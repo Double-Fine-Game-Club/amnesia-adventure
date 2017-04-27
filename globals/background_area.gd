@@ -5,6 +5,7 @@ var collisionshape_click
 var rectangleshape
 
 func input(viewport, event, shape_idx):
+	printt("shape_idx", shape_idx)
 	if event.type == InputEvent.MOUSE_BUTTON && event.pressed:
 		if (event.button_index == 1):
 			prints("click event =", event)
@@ -21,18 +22,17 @@ func _init():
 
 func _enter_tree():
 	# Use background texture to set collision shape
-	var bg = get_parent().get_node("background")
-	if bg:
-		print(bg)
+	var background = get_parent().get_node("background")
+	if background:
+		var size = background.get_size()
+		var extents = Vector2(size.x / 2, size.y / 2)
+		var transform = Matrix32(Vector2(1, 0), Vector2(0, 1), extents)
 
-	var vec = Vector2(960.0, 540.0)
-
-	var shape = RectangleShape2D.new()
-	shape.set_extents(vec)
-	# What's the difference between set_pos() and set_global_pos()?
-	set_pos(vec)
-	add_shape(shape)
-
+		var shape = RectangleShape2D.new()
+		shape.set_extents(extents)
+		add_shape(shape)
+		set_shape_transform(0, transform)
+	
 func _ready():
 	connect("input_event", self, "input")
 	add_to_group("background")
