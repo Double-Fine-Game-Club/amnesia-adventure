@@ -12,8 +12,9 @@
 [ext_resource path="res://rooms/space/sprites/pedals-kednar.png" type="Texture" id=10]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=11]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=12]
-[ext_resource path="res://ui/hub_button.gd" type="Script" id=13]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=14]
+[ext_resource path="res://music/spacely-jenni.ogg" type="AudioStream" id=13]
+[ext_resource path="res://ui/hub_button.gd" type="Script" id=14]
+[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=15]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -155,6 +156,11 @@ transform/pos = Vector2( -50.0043, -45.1672 )
 transform/scale = Vector2( 1.45621, 1.06989 )
 navpoly = SubResource( 1 )
 enabled = true
+
+[node name="player" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 951.401, 576.486 )
+z/z = 576
 
 [node name="game" parent="." instance=ExtResource( 12 )]
 
