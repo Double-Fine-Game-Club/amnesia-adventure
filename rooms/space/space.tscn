@@ -12,7 +12,7 @@
 [ext_resource path="res://globals/terrain.gd" type="Script" id=10]
 [ext_resource path="res://rooms/space/player.tscn" type="PackedScene" id=11]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=12]
-[ext_resource path="res://music/meadow-jennibee.ogg" type="AudioStream" id=13]
+[ext_resource path="res://music/spacely-jenni.ogg" type="AudioStream" id=13]
 [ext_resource path="res://ui/hub_button.gd" type="Script" id=14]
 [ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=15]
 
@@ -155,6 +155,7 @@ enabled = true
 [node name="player" parent="." instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 951.401, 576.486 )
+z/z = 576
 
 [node name="game" parent="." instance=ExtResource( 12 )]
 
