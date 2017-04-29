@@ -2,6 +2,6 @@
 
 say player "A mountain"
 
-:climb
+:pick_up
 
-say player "I don't want to climb it"
+say player "It's too heavy to pick up"
