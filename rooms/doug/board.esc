@@ -1,0 +1,9 @@
+:pick_up
+
+set_global i/inv_board true
+set_active board false
+say player "A board. And it's mine! All mine!"
+
+:look
+
+say player "It's just a board."

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://rooms/doug/sprites/doug-bg-jennibee.png" type="Texture" id=2]
@@ -9,9 +9,11 @@
 [ext_resource path="res://rooms/doug/boulder.tscn" type="PackedScene" id=7]
 [ext_resource path="res://rooms/doug/moai1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://rooms/doug/moai2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=10]
-[ext_resource path="res://ui/hub_button.gd" type="Script" id=11]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=12]
+[ext_resource path="res://rooms/doug/sprites/board-jennibee.png" type="Texture" id=10]
+[ext_resource path="res://globals/game.scn" type="PackedScene" id=11]
+[ext_resource path="res://ui/hub_button.gd" type="Script" id=12]
+[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=13]
+[ext_resource path="res://music/meadow-jenni.ogg" type="AudioStream" id=14]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -67,7 +69,7 @@ margin/left = 1522.0
 margin/top = 106.0
 margin/right = 1685.0
 margin/bottom = 412.0
-action = "pick_up"
+action = "use"
 secondary_action = "look"
 interact_angle = 270
 
@@ -82,8 +84,9 @@ margin/left = 1140.0
 margin/top = 260.0
 margin/right = 1464.0
 margin/bottom = 425.0
-action = "use"
+action = "pick_up"
 secondary_action = "look"
+use_combine = true
 interact_angle = 90
 
 [node name="interact_pos" type="Position2D" parent="boulder"]
@@ -97,7 +100,7 @@ margin/left = 327.0
 margin/top = 95.0
 margin/right = 490.0
 margin/bottom = 401.0
-action = "pick_up"
+action = "use"
 secondary_action = "look"
 interact_angle = 270
 
@@ -112,7 +115,7 @@ margin/left = 857.0
 margin/top = 88.0
 margin/right = 1020.0
 margin/bottom = 394.0
-action = "pick_up"
+action = "use"
 secondary_action = "look"
 interact_angle = 90
 
@@ -121,7 +124,29 @@ interact_angle = 90
 transform/pos = Vector2( 7.19824, 311.452 )
 transform/scale = Vector2( 1, -1.88363 )
 
-[node name="game" parent="." instance=ExtResource( 10 )]
+[node name="board" parent="." instance=ExtResource( 9 )]
+
+margin/left = 206.0
+margin/top = 568.0
+margin/right = 302.0
+margin/bottom = 670.0
+texture = ExtResource( 10 )
+tooltip = "Board"
+action = "pick_up"
+secondary_action = "look"
+events_path = "res://rooms/doug/board.esc"
+global_id = "board"
+interact_angle = 90
+placeholders = {
+
+}
+
+[node name="interact_pos" type="Position2D" parent="board"]
+
+transform/pos = Vector2( 38.8302, 129.086 )
+transform/scale = Vector2( -1.19868, 2.05487 )
+
+[node name="game" parent="." instance=ExtResource( 11 )]
 
 [node name="return_to_hub" type="Control" parent="."]
 
@@ -133,7 +158,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
-script/script = ExtResource( 11 )
+script/script = ExtResource( 12 )
 
 [node name="hub_button" type="TextureButton" parent="return_to_hub"]
 
@@ -148,8 +173,19 @@ margin/bottom = 879.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 12 )
+textures/normal = ExtResource( 13 )
 params/resize_mode = 0
 params/stretch_mode = 0
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 14 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

@@ -1,7 +1,18 @@
+:pick_up inv_board
+
+say player "Hey! There's a ladder under here!"
+say player "Oh, wait. That's right, I have a ladder under my bed!"
+
+set_global i/inv_ladder true
+set_global i/inv_board false
+
+cut_scene telon fade_out
+change_scene res://rooms/hub/hub.tscn
+cut_scene telon fade_in
+
 :pick_up
 
 say player "I'm not strong enough to pick that up."
-
 
 :look
 
