@@ -1,0 +1,7 @@
+:look
+
+say player "A mountain"
+
+:pick_up
+
+say player "It's too heavy to pick up"
