@@ -2,7 +2,7 @@
 say player "I should be able to move around with this!"
 set_active pipe false
 set_global has_pipe true
-change_scene res://rooms/space/cutscene_pipe.tscn
+set_global start_moving true
 
 :look
 say player "That’s my number one fluid evacuation hose!"
