@@ -4,7 +4,6 @@ var vm
 var root
 var confirm_popup = null
 var labels = []
-var current_scene
 
 func load_autosave():
 	vm.load_autosave()
@@ -19,7 +18,7 @@ func button_clicked():
 func newgame_pressed():
 	button_clicked()
 	if root.get_current_scene() extends preload("res://globals/scene.gd"):
-		#confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
+		confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
 		confirm_popup.start("UI_NEW_GAME_CONFIRM",self,"start_new_game")
 	else:
 		start_new_game(true)
@@ -63,11 +62,8 @@ func menu_collapsed():
 
 func _on_exit_pressed():
 	button_clicked()
-	#confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
-	#confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
-	current_scene = root.get_child(root.get_child_count() -1)
-	current_scene.queue_free()
-	get_tree().quit();
+	confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
+	confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
 	
 func _quit_game(p_confirm):
 	if !p_confirm:
@@ -77,6 +73,7 @@ func _quit_game(p_confirm):
 func language_changed():
 	for l in labels:
 		l.set_text(l.get_name())
+		printt("label for ", l.get_name(), TranslationServer.translate(l.get_name()))
 
 func _find_labels(p = null):
 	if p == null:
@@ -94,7 +91,6 @@ func set_continue_button():
 		get_node("continue").set_disabled(true)
 		#get_node("continue").hide()
 
-
 func _on_language_selected(lang):
 	vm.settings.text_lang=lang
 	TranslationServer.set_locale(vm.settings.text_lang)
@@ -102,12 +98,13 @@ func _on_language_selected(lang):
 	vm.save_settings()
 
 func _ready():
-	#get_node("new_game").connect("pressed", self, "newgame_pressed")
+	printt("** locale is ", TranslationServer.get_locale())
+	get_node("new_game").connect("pressed", self, "newgame_pressed")
 	get_node("continue").connect("pressed", self, "continue_pressed")
 	#get_node("save").connect("pressed", self, "save_pressed")
 	get_node("exit").connect("pressed", self, "_on_exit_pressed")
-	#get_node("settings").connect("pressed", self, "settings_pressed")
-	#get_node("credits").connect("pressed",self,"credits_pressed")
+	get_node("settings").connect("pressed", self, "settings_pressed")
+	get_node("credits").connect("pressed",self,"credits_pressed")
 	vm = get_tree().get_root().get_node("vm")
 	set_process_input(true)
 	#get_node("/root/main").set_current_scene(self)
