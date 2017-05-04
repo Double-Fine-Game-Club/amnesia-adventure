@@ -1,0 +1,32 @@
+:pick_up
+>	[has_pipe]
+	say player "Careful now, we don’t want any spillage."
+	set_active bag false
+	set_global has_bag true
+
+>	[!has_pipe]
+	say player "I need some way to aim my thrust!"
+	stop
+
+>	[has_bag,has_pedals,has_screw,has_seat]
+	change_scene "res://rooms/space/cutscene_pipe.tscn"
+
+:look
+
+>	[!bag_line1]
+	say player "The sanitary waste receptacle. An integral part of every mission to the Lower End Orbit"
+	set_global bag_line1 true
+	set_global bag_line2 false
+	stop
+
+>	[!bag_line2]
+	say player "Really though, it’s just a bag of poop."
+	set_global bag_line2 true
+	set_global bag_line3 false
+	stop
+
+>	[!bag_line3]
+	say player "Yup, still poop there."
+	set_global bag_line3 true
+	set_global bag_line1 false
+	stop

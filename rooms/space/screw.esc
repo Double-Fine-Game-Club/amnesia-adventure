@@ -1,0 +1,32 @@
+:pick_up
+
+>	[has_pipe]
+	say player "Time to plug you back in!"
+	set_active screw false
+	set_global has_screw true
+>	[!has_pipe]
+	say player "I need some way to aim my thrust!"
+	stop
+
+>	[has_bag,has_pedals,has_screw,has_seat]
+	change_scene "res://rooms/space/cutscene_pipe.tscn"
+
+:look
+
+>	[!screw_line1]
+	say player "The fabled Master Bolt of universal attachment! It’s so beautiful."
+	set_global screw_line1 true
+	set_global screw_line2 false
+	stop
+
+>	[!screw_line2]
+	say player "Legend has it you can slap it onto anything and make it work!"
+	set_global screw_line2 true
+	set_global screw_line3 false
+	stop
+
+>	[!screw_line3]
+	say player "It even works on humans, I already feel very attached to it."
+	set_global screw_line3 true
+	set_global screw_line1 false
+	stop

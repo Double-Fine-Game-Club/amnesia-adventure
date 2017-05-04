@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://rooms/space/sprites/cutscene_assembly_1.png" type="Texture" id=1]
+[ext_resource path="res://rooms/space/sprites/cutscene_assembly_2.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "cutscene_assembly"
+length = 1.0
+loop = false
+step = 0.1
+
+[node name="sprite_cutscene_pipe" type="Node2D"]
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 610, 350 )
+frames = SubResource( 1 )
+animation = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/cutscene_assembly = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+

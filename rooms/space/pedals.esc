@@ -1,0 +1,29 @@
+:pick_up
+
+>	[has_pipe]
+	say player "Excuse me, but I need to step on your toes again!"	
+	set_active pedals false
+	set_global has_pedals true
+>	[!has_pipe]
+	say player "I need some way to aim my thrust!"
+	stop
+
+>	[has_bag,has_pedals,has_screw,has_seat]
+	change_scene "res://rooms/space/cutscene_pipe.tscn"
+
+:look
+
+>	[!pedals_line1]
+	say player "They’re called ‘lower human appendage supporters’!"
+	say player "But they look like the feet of the toilet to me."
+	set_global pedals_line1 true
+	set_global pedals_line2 false
+	stop
+
+>	[!pedals_line2]
+	say player "The astronaut’s handbook says: ‘While operating heavy machinery such as the space toilet, support for the lower appendages’ is mandatory."
+	say player "Maybe they know about the flushing problem."
+	set_global pedals_line2 true
+	set_global pedals_line1 false
+	stop
+

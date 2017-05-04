@@ -1,0 +1,5 @@
+:pick_up
+say player "I won't leave my toilet behind. We have lived through so much!"
+
+:look
+say player "A ship without its toilet is a sad, empty vessel."
