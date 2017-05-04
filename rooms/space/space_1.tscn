@@ -1,21 +1,22 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://rooms/space/sprites/scene_kednar_background.png" type="Texture" id=2]
 [ext_resource path="res://globals/background.gd" type="Script" id=3]
-[ext_resource path="res://rooms/space/seat.tscn" type="PackedScene" id=4]
-[ext_resource path="res://rooms/space/ship.tscn" type="PackedScene" id=5]
-[ext_resource path="res://rooms/space/bag.tscn" type="PackedScene" id=6]
-[ext_resource path="res://rooms/space/pedals.tscn" type="PackedScene" id=7]
-[ext_resource path="res://rooms/space/screw.tscn" type="PackedScene" id=8]
-[ext_resource path="res://rooms/space/pipe.tscn" type="PackedScene" id=9]
-[ext_resource path="res://rooms/space/player_start.tscn" type="PackedScene" id=10]
-[ext_resource path="res://rooms/space/space_1_anim.gd" type="Script" id=11]
-[ext_resource path="res://globals/terrain.gd" type="Script" id=12]
-[ext_resource path="res://ui/hub_button.gd" type="Script" id=13]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=14]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=15]
-[ext_resource path="res://rooms/space/action_menu_space.tscn" type="PackedScene" id=16]
+[ext_resource path="res://rooms/space/space_1_monitor.gd" type="Script" id=4]
+[ext_resource path="res://rooms/space/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/space/char_ked_start.png" type="Texture" id=6]
+[ext_resource path="res://rooms/space/seat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://rooms/space/ship.tscn" type="PackedScene" id=8]
+[ext_resource path="res://rooms/space/bag.tscn" type="PackedScene" id=9]
+[ext_resource path="res://rooms/space/pedals.tscn" type="PackedScene" id=10]
+[ext_resource path="res://rooms/space/screw.tscn" type="PackedScene" id=11]
+[ext_resource path="res://rooms/space/pipe.tscn" type="PackedScene" id=12]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=13]
+[ext_resource path="res://ui/hub_button.gd" type="Script" id=14]
+[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=15]
+[ext_resource path="res://globals/game.scn" type="PackedScene" id=16]
+[ext_resource path="res://rooms/space/action_menu_space.tscn" type="PackedScene" id=17]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -43,8 +44,34 @@ stretch_mode = 0
 script/script = ExtResource( 3 )
 action = "walk"
 
-[node name="seat" parent="." instance=ExtResource( 4 )]
+[node name="Node2D" type="Node2D" parent="."]
 
+script/script = ExtResource( 4 )
+
+[node name="player" parent="." instance=ExtResource( 5 )]
+
+visibility/visible = false
+transform/pos = Vector2( 824.288, 486.271 )
+z/z = 486
+telekinetic = true
+
+[node name="player_sham" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 629.0
+margin/top = 364.0
+margin/right = 988.0
+margin/bottom = 723.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 0
+
+[node name="seat" parent="." instance=ExtResource( 7 )]
+
+editor/display_folded = true
 rect/rotation = -44.9999
 margin/left = 1145.0
 margin/top = 727.0
@@ -52,15 +79,26 @@ margin/right = 1326.0
 margin/bottom = 943.0
 expand = true
 
-[node name="ship" parent="." instance=ExtResource( 5 )]
+[node name="interact_pos" type="Position2D" parent="seat"]
 
-margin/left = 132.0
-margin/top = 687.0
-margin/right = 432.0
-margin/bottom = 949.0
+transform/pos = Vector2( -40.4012, 132.746 )
 
-[node name="bag" parent="." instance=ExtResource( 6 )]
+[node name="ship" parent="." instance=ExtResource( 8 )]
 
+editor/display_folded = true
+margin/left = 106.0
+margin/top = 739.0
+margin/right = 406.0
+margin/bottom = 1001.0
+
+[node name="interact_pos" type="Position2D" parent="ship"]
+
+transform/pos = Vector2( 494.851, -41.9283 )
+transform/rot = -44.9999
+
+[node name="bag" parent="." instance=ExtResource( 9 )]
+
+editor/display_folded = true
 rect/rotation = -30.0
 margin/left = 1556.0
 margin/top = 777.0
@@ -68,8 +106,14 @@ margin/right = 1666.0
 margin/bottom = 886.0
 expand = true
 
-[node name="pedals" parent="." instance=ExtResource( 7 )]
+[node name="interact_pos" type="Position2D" parent="bag"]
 
+transform/pos = Vector2( -62.2585, 110.159 )
+transform/rot = -14.9999
+
+[node name="pedals" parent="." instance=ExtResource( 10 )]
+
+editor/display_folded = true
 rect/rotation = -30.0
 margin/left = 1569.0
 margin/top = 267.0
@@ -77,37 +121,37 @@ margin/right = 1719.0
 margin/bottom = 421.0
 expand = true
 
-[node name="screw" parent="." instance=ExtResource( 8 )]
+[node name="interact_pos" type="Position2D" parent="pedals"]
 
+transform/pos = Vector2( -23.1328, 154.953 )
+transform/rot = -14.9999
+
+[node name="screw" parent="." instance=ExtResource( 11 )]
+
+editor/display_folded = true
 margin/left = 1172.0
 margin/top = 267.0
 margin/right = 1272.0
 margin/bottom = 352.0
 
-[node name="pipe" parent="." instance=ExtResource( 9 )]
+[node name="interact_pos" type="Position2D" parent="screw"]
+
+transform/pos = Vector2( -59.649, 91.3383 )
+transform/rot = -44.9999
+
+[node name="pipe" parent="." instance=ExtResource( 12 )]
 
 margin/left = 882.0
 margin/top = 467.0
 margin/right = 1062.0
 margin/bottom = 633.0
 
-[node name="player" parent="." instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 831.851, 497.402 )
-z/z = 497
-speed = 0
-animations = ExtResource( 11 )
-telekinetic = true
-placeholders = {
-
-}
-
 [node name="terrain" type="Navigation2D" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( -99.9615, 549.717 )
 transform/scale = Vector2( 0.950644, 0.961125 )
-script/script = ExtResource( 12 )
+script/script = ExtResource( 13 )
 scales = null
 lightmap = null
 bitmaps_scale = Vector2( 2.35, 1.5 )
@@ -134,7 +178,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-script/script = ExtResource( 13 )
+script/script = ExtResource( 14 )
 
 [node name="hub_button" type="TextureButton" parent="back_to_hub"]
 
@@ -149,14 +193,15 @@ margin/bottom = 145.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 14 )
+textures/normal = ExtResource( 15 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
-[node name="game" parent="." instance=ExtResource( 15 )]
+[node name="game" parent="." instance=ExtResource( 16 )]
 
-[node name="action_menu" parent="game" instance=ExtResource( 16 )]
+[node name="action_menu" parent="game" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 0, -50 )
+z/z = 1000
 
 

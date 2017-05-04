@@ -4,6 +4,13 @@
 	set_active bag false
 	set_global has_bag true
 
+>	[!has_pipe]
+	say player "I need some way to aim my thrust!"
+	stop
+
+>	[has_bag,has_pedals,has_screw,has_seat]
+	change_scene "res://rooms/space/cutscene_pipe.tscn"
+
 :look
 
 >	[!bag_line1]
