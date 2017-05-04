@@ -6,7 +6,7 @@ var has_dialogue = true
 
 func skip_dialogue():
 	if has_dialogue:
-		get_node("text").set_bbcode("Why did I even take this?")
+		get_node("text").set_bbcode("And despite all the excitement, the best room is still a restroom.")
 		has_dialogue = false
 
 func _input(event):
@@ -15,12 +15,12 @@ func _input(event):
 
 func _ready():
 	# Preload main scene
-	space_scene = preload("res://rooms/space/cutscene_wee.tscn")
+	space_scene = preload("res://rooms/space/space_1.tscn")
 	set_process_input(true)
 	set_process(true)
 
 func _process(delta):
     # Add up seconds passed
 	seconds += delta
-	if (seconds >= 2 && has_dialogue) || seconds >= 10:
+	if (seconds >= 5 && has_dialogue) || seconds >= 10:
 		skip_dialogue()

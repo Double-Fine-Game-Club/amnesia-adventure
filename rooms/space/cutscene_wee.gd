@@ -6,7 +6,7 @@ var has_dialogue = true
 
 func skip_dialogue():
 	if has_dialogue:
-		get_node("text").set_bbcode("Why did I even take this?")
+		get_node("text").set_bbcode("")
 		has_dialogue = false
 
 func _input(event):
@@ -15,7 +15,7 @@ func _input(event):
 
 func _ready():
 	# Preload main scene
-	space_scene = preload("res://rooms/space/cutscene_wee.tscn")
+	space_scene = preload("res://rooms/space/cutscene_final.tscn")
 	set_process_input(true)
 	set_process(true)
 

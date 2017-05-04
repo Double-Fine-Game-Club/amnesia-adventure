@@ -4,5 +4,8 @@ set_active pipe false
 set_global has_pipe true
 set_global start_moving true
 
+>	[has_bag,has_pedals,has_screw,has_seat]
+	change_scene "res://rooms/space/cutscene_pipe.tscn"
+
 :look
 say player "That’s my number one fluid evacuation hose!"
