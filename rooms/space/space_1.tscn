@@ -14,7 +14,7 @@
 [ext_resource path="res://rooms/space/pipe.tscn" type="PackedScene" id=12]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=13]
 [ext_resource path="res://ui/hub_button.gd" type="Script" id=14]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=15]
+[ext_resource path="res://rooms/space/sprites/back.png" type="Texture" id=15]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=16]
 [ext_resource path="res://rooms/space/action_menu_space.tscn" type="PackedScene" id=17]
 [ext_resource path="res://music/spacely-jenni.ogg" type="AudioStream" id=18]
@@ -187,10 +187,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 102.0
-margin/top = 87.0
-margin/right = 172.0
-margin/bottom = 145.0
+margin/left = 60.0
+margin/top = 66.0
+margin/right = 134.0
+margin/bottom = 134.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
