@@ -1,43 +1,68 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://globals/action_menu.gd" type="Script" id=1]
+[ext_resource path="res://rooms/space/sprites/verb-coin.png" type="Texture" id=2]
+[ext_resource path="res://rooms/space/sprites/look_at.png" type="Texture" id=3]
+[ext_resource path="res://rooms/space/sprites/look_at_hover.png" type="Texture" id=4]
+[ext_resource path="res://rooms/space/sprites/pick_up.png" type="Texture" id=5]
+[ext_resource path="res://rooms/space/sprites/pick_up_hover.png" type="Texture" id=6]
 
 [node name="action_menu" type="Node2D"]
 
+transform/pos = Vector2( -5.42659, 3.45123 )
+transform/scale = Vector2( 0.498147, 0.515033 )
 script/script = ExtResource( 1 )
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 18.0
+margin/top = -102.0
+margin/right = 151.0
+margin/bottom = 33.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
 
 [node name="actions" type="Node2D" parent="."]
 
-[node name="look" type="Button" parent="actions"]
+[node name="look" type="TextureButton" parent="actions"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = -30.0
-margin/right = 52.0
-margin/bottom = -10.0
+margin/left = -8.0
+margin/top = -98.0
+margin/right = 92.0
+margin/bottom = 2.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Look at"
-flat = false
+textures/normal = ExtResource( 3 )
+textures/hover = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
-[node name="pick_up" type="Button" parent="actions"]
+[node name="pick_up" type="TextureButton" parent="actions"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 11.0
-margin/top = -3.0
-margin/right = 71.0
-margin/bottom = 17.0
+margin/left = 87.0
+margin/top = -103.0
+margin/right = 187.0
+margin/bottom = -3.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Pick up"
-flat = false
+textures/normal = ExtResource( 5 )
+textures/hover = ExtResource( 6 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 
