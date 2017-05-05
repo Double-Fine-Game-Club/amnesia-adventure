@@ -1,0 +1,8 @@
+:use
+
+change_scene res://rooms/clock/clock.tscn
+
+:look
+
+say player "That grandfather clock is very special."
+

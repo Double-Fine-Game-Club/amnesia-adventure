@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://globals/action_menu.gd" type="Script" id=1]
+[ext_resource path="res://rooms/doug/sprites/verb-coin-jennibee.png" type="Texture" id=2]
+[ext_resource path="res://rooms/doug/sprites/look_at.png" type="Texture" id=3]
+[ext_resource path="res://rooms/doug/sprites/pick_up.png" type="Texture" id=4]
+
+[node name="action_menu" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -8.0
+margin/top = -98.0
+margin/right = 133.0
+margin/bottom = 45.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="actions" type="Node2D" parent="."]
+
+[node name="look" type="TextureButton" parent="actions"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+size_flags/stretch_ratio = 0.0
+margin/left = 34.0
+margin/top = -62.0
+margin/right = 134.0
+margin/bottom = 8.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/hover = ExtResource( 3 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="pick_up" type="TextureButton" parent="actions"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 14.0
+margin/top = -26.0
+margin/right = 114.0
+margin/bottom = 44.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/hover = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+
