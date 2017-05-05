@@ -4,7 +4,7 @@ var current_scene
 
 func doug_pressed():
 	current_scene.queue_free()
-	get_tree().change_scene("res://rooms/doug/doug.tscn")
+	get_tree().change_scene("res://rooms/doug/doug_intro.tscn")
 
 func clock_pressed():
 	current_scene.queue_free()
