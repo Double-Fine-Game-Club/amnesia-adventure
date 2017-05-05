@@ -20,7 +20,7 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() -1)
 
 	# Preload main scene
-	space_scene = preload("res://rooms/space/space_1.tscn")
+	space_scene = preload("res://rooms/hub/hub.tscn")
 	set_process_input(true)
 	set_process(true)
 
