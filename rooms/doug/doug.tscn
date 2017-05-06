@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://rooms/doug/sprites/doug-bg-jennibee.png" type="Texture" id=2]
@@ -8,19 +8,18 @@
 [ext_resource path="res://rooms/doug/moai1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://rooms/doug/moai2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://rooms/doug/moai3.tscn" type="PackedScene" id=8]
-[ext_resource path="res://rooms/doug/player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://globals/terrain.gd" type="Script" id=10]
-[ext_resource path="res://ui/hub_button.gd" type="Script" id=11]
-[ext_resource path="res://rooms/doug/sprites/hub-return-jennibee.png" type="Texture" id=12]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=13]
-[ext_resource path="res://rooms/doug/action_menu_doug.tscn" type="PackedScene" id=14]
-[ext_resource path="res://music/meadow-jenni.ogg" type="AudioStream" id=15]
+[ext_resource path="res://rooms/doug/return.tscn" type="PackedScene" id=9]
+[ext_resource path="res://rooms/doug/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=11]
+[ext_resource path="res://globals/game.scn" type="PackedScene" id=12]
+[ext_resource path="res://rooms/doug/action_menu_doug.tscn" type="PackedScene" id=13]
+[ext_resource path="res://music/meadow-jenni.ogg" type="AudioStream" id=14]
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = Vector2Array( 1204.89, 557.953, 2024.73, 557.19, 2035.01, 1074.33, 1137.71, 1060.63, 766.377, 567.042, 414.945, 555.219, 671.943, 1057.21, 305.49, 1053.78, 165.074, 564.04, 168.499, 1057.21 )
-polygons = [ IntArray( 0, 1, 2, 3, 4 ), IntArray( 5, 4, 3, 6, 7, 8 ), IntArray( 8, 7, 9 ) ]
-outlines = [ Vector2Array( 414.945, 555.219, 766.377, 567.042, 1204.89, 557.953, 2024.73, 557.19, 2035.01, 1074.33, 1137.71, 1060.63, 671.943, 1057.21, 305.49, 1053.78, 168.499, 1057.21, 165.074, 564.04 ) ]
+vertices = Vector2Array( 1159.05, -73.1998, 1448.5, -83.1914, 1435.97, 354.435, 1134.31, 349.779, 740.953, -73.1998, 775.589, 329.796, 389.652, 326.465, 394.6, -69.8692, 162.048, -69.8692, 162.048, 323.135 )
+polygons = [ IntArray( 0, 1, 2, 3 ), IntArray( 4, 0, 3, 5 ), IntArray( 4, 5, 6, 7 ), IntArray( 8, 7, 6, 9 ) ]
+outlines = [ Vector2Array( 394.6, -69.8692, 740.953, -73.1998, 1159.05, -73.1998, 1448.5, -83.1914, 1435.97, 354.435, 1134.31, 349.779, 775.589, 329.796, 389.652, 326.465, 162.048, 323.135, 162.048, -69.8692 ) ]
 
 [node name="scene" type="Node2D"]
 
@@ -86,7 +85,14 @@ margin/bottom = 391.0
 expand = true
 action = ""
 
-[node name="player" parent="." instance=ExtResource( 9 )]
+[node name="return" parent="." instance=ExtResource( 9 )]
+
+margin/left = 1544.0
+margin/top = 603.0
+margin/right = 1871.0
+margin/bottom = 895.0
+
+[node name="player" parent="." instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 872.948, 634.393 )
 z/z = 634
@@ -99,7 +105,7 @@ placeholders = {
 
 transform/pos = Vector2( -99.9615, 549.717 )
 transform/scale = Vector2( 0.950644, 0.961125 )
-script/script = ExtResource( 10 )
+script/script = ExtResource( 11 )
 scales = null
 lightmap = null
 bitmaps_scale = Vector2( 2.35, 1.5 )
@@ -116,45 +122,15 @@ transform/scale = Vector2( 1.45621, 1.06989 )
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="back_to_hub" type="Control" parent="."]
+[node name="game" parent="." instance=ExtResource( 12 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 0.0
-script/script = ExtResource( 11 )
-
-[node name="hub_button" type="TextureButton" parent="back_to_hub"]
-
-rect/scale = Vector2( 4, 4 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 1558.0
-margin/top = 653.0
-margin/right = 1628.0
-margin/bottom = 711.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 12 )
-params/resize_mode = 1
-params/stretch_mode = 0
-
-[node name="game" parent="." instance=ExtResource( 13 )]
-
-[node name="action_menu" parent="game" instance=ExtResource( 14 )]
+[node name="action_menu" parent="game" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 0, -50 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 15 )
+stream/stream = ExtResource( 14 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 12.0

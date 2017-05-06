@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://rooms/space/sprites/scene_kednar_background.png" type="Texture" id=2]
@@ -13,11 +13,10 @@
 [ext_resource path="res://rooms/space/screw.tscn" type="PackedScene" id=11]
 [ext_resource path="res://rooms/space/pipe.tscn" type="PackedScene" id=12]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=13]
-[ext_resource path="res://ui/hub_button.gd" type="Script" id=14]
-[ext_resource path="res://rooms/space/sprites/back.png" type="Texture" id=15]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=16]
-[ext_resource path="res://rooms/space/action_menu_space.tscn" type="PackedScene" id=17]
-[ext_resource path="res://music/spacely-jenni.ogg" type="AudioStream" id=18]
+[ext_resource path="res://globals/game.scn" type="PackedScene" id=14]
+[ext_resource path="res://rooms/space/action_menu_space.tscn" type="PackedScene" id=15]
+[ext_resource path="res://rooms/space/return.tscn" type="PackedScene" id=16]
+[ext_resource path="res://music/spacely-jenni.ogg" type="AudioStream" id=17]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -169,45 +168,23 @@ transform/scale = Vector2( 1.45621, 1.06989 )
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="back_to_hub" type="Control" parent="."]
+[node name="game" parent="." instance=ExtResource( 14 )]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 0.0
-script/script = ExtResource( 14 )
-
-[node name="hub_button" type="TextureButton" parent="back_to_hub"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 60.0
-margin/top = 66.0
-margin/right = 134.0
-margin/bottom = 134.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 15 )
-params/resize_mode = 1
-params/stretch_mode = 0
-
-[node name="game" parent="." instance=ExtResource( 16 )]
-
-[node name="action_menu" parent="game" instance=ExtResource( 17 )]
+[node name="action_menu" parent="game" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 0, -50 )
 z/z = 1000
 
+[node name="return" parent="game" instance=ExtResource( 16 )]
+
+margin/left = 62.0
+margin/top = 48.0
+margin/right = 156.0
+margin/bottom = 139.0
+
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 18 )
+stream/stream = ExtResource( 17 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
