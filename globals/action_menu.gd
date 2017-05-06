@@ -42,7 +42,7 @@ func _ready():
 	var acts = get_node("actions")
 	for i in range(acts.get_child_count()):
 		var c = acts.get_child(i)
-		if !c.is_type("Button"):
+		if !(c.is_type("Button") || c.is_type("TextureButton")):
 			continue
 		actions.push_back(c)
 		c.connect("pressed", self, "action_pressed", [c.get_name()])

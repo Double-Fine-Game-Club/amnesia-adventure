@@ -1,16 +1,12 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://globals/action_menu.gd" type="Script" id=1]
-[ext_resource path="res://rooms/space/sprites/verb-coin.png" type="Texture" id=2]
-[ext_resource path="res://rooms/space/sprites/look_at.png" type="Texture" id=3]
-[ext_resource path="res://rooms/space/sprites/look_at_hover.png" type="Texture" id=4]
-[ext_resource path="res://rooms/space/sprites/pick_up.png" type="Texture" id=5]
-[ext_resource path="res://rooms/space/sprites/pick_up_hover.png" type="Texture" id=6]
+[ext_resource path="res://rooms/doug/sprites/verb-coin-jennibee.png" type="Texture" id=2]
+[ext_resource path="res://rooms/doug/sprites/look_at.png" type="Texture" id=3]
+[ext_resource path="res://rooms/doug/sprites/pick_up.png" type="Texture" id=4]
 
 [node name="action_menu" type="Node2D"]
 
-transform/pos = Vector2( -5.42659, 3.45123 )
-transform/scale = Vector2( 0.498147, 0.515033 )
 script/script = ExtResource( 1 )
 
 [node name="TextureFrame" type="TextureFrame" parent="."]
@@ -19,10 +15,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 18.0
-margin/top = -102.0
-margin/right = 151.0
-margin/bottom = 33.0
+margin/left = -8.0
+margin/top = -98.0
+margin/right = 133.0
+margin/bottom = 45.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
@@ -31,37 +27,38 @@ stretch_mode = 0
 
 [node name="look" type="TextureButton" parent="actions"]
 
+rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -8.0
-margin/top = -98.0
-margin/right = 92.0
-margin/bottom = 2.0
+size_flags/stretch_ratio = 0.0
+margin/left = 34.0
+margin/top = -62.0
+margin/right = 134.0
+margin/bottom = 8.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/hover = ExtResource( 4 )
+textures/hover = ExtResource( 3 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
 [node name="pick_up" type="TextureButton" parent="actions"]
 
+rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 87.0
-margin/top = -103.0
-margin/right = 187.0
-margin/bottom = -3.0
+margin/left = 14.0
+margin/top = -26.0
+margin/right = 114.0
+margin/bottom = 44.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 5 )
-textures/hover = ExtResource( 6 )
+textures/hover = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
