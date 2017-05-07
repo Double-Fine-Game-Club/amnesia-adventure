@@ -1,0 +1,7 @@
+:use
+
+change_scene res://rooms/hub/hub.tscn
+
+:look
+
+say player "'Back to reality'... hmm... should I?"
