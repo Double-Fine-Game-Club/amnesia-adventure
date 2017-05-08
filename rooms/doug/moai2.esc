@@ -1,6 +1,10 @@
-:use
+:use inv_board
 
-say player "So, Moai. What do you guys do for fun?"
+say player "That board's not big enough to get me up to the top of that head."
+
+:pick_up
+
+say player "Even if I could move that, it wouldn't help me get out of here."
 
 :look
 

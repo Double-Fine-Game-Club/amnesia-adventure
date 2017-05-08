@@ -1,3 +1,7 @@
+:use inv_board
+
+say player "I'm bored enough already."
+
 :pick_up
 
 set_global i/inv_board true

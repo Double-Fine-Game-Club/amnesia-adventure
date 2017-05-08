@@ -29,27 +29,32 @@ func mouse_enter(obj):
 	var text
 	var tt = obj.get_tooltip()
 
-	#TODO: Fix inventory combination
-	#if current_action == "pick_up" && text != null:
-		#text = tr(current_action + ".combine_id")
-		#text = text.replace("%2", tr(tt))
-		#text = text.replace("%1", tr(current_tool.get_tooltip()))
-	if obj.inventory:
-		var action = inventory.get_action()
+	if current_tool != null:
+		
+		text = "use.combine_id"
+		if current_action != "":
+			text = tr(tr(current_action) + ".combine_id")
+		text = tr(text.replace("%2", ".id"))
+		text = tr(text.replace("%1", tr(current_tool.get_tooltip())))
+		text = tr(text.replace("%2", tr(tt)))
+		
+	elif obj.inventory:
+		var action = obj.action
 		if action == "":
 			action = current_action
-		text = tr("Use " + tt + " with")
+		text = tr(tr(action) + " " + tr(tt))
+		text = tr(text.replace("%2", tr(tt)))
 	else:
-		text = tt
+		text = tr(tt)
 	get_tree().call_group(0, "hud", "set_tooltip", text)
 	vm.hover_begin(obj)
 
 func mouse_exit(obj):
 	var text
-	#var tt = obj.get_tooltip()
-	if current_action != "" && current_tool != null:
-		text = tr(current_action + ".id")
-		text = text.replace("%1", tr(current_tool.get_tooltip()))
+	var tt = obj.get_tooltip()
+	if obj.action != "" && current_tool != null:
+		text = tr(tr(obj.action) + " " + tr(tt))
+		text = tr(text.replace("%2", tr(tt)))
 	else:
 		text = ""
 	get_tree().call_group(0, "hud", "set_tooltip", text)
@@ -109,9 +114,12 @@ func clicked(obj, pos, button_index):
 			player.walk_to(pos)
 			get_tree().call_group(0, "hud", "set_tooltip", "")
 
-		elif obj.use_action_menu && action_menu != null:
+		elif obj.use_action_menu && action_menu != null && current_tool == null:
 			spawn_action_menu(obj)
-
+		elif obj.use_action_menu && action_menu != null && current_tool != null:
+			obj.action = "use"
+			clicked(obj, pos, button_index)
+			obj.action = ""
 
 func spawn_action_menu(obj):
 	if action_menu == null:
