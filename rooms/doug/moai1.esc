@@ -1,7 +1,11 @@
-:use 
+:use inv_board
 
-say player "Hello Mr. Moai head."
+say player "I doubt people would like me adding things to ancient art."
+
+:pick_up 
+
+say player "Even the largest ogre couldn't pick that up."
 
 :look
 
-say player "That's a big head."
+say player "That's quite an interesting sculpture."

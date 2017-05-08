@@ -1,4 +1,4 @@
-:pick_up inv_board
+:use inv_board
 
 say player "Hey! There's a ladder under here!"
 say player "Oh, wait. That's right, I have a ladder under my bed!"
@@ -12,8 +12,9 @@ cut_scene telon fade_in
 
 :pick_up
 
-say player "I'm not strong enough to pick that up."
+say player "My uncle Bill can throw around boulders all day."
+say player "Me on the other hand... I'm not strong enough to lift that without some help."
 
 :look
 
-say player "That's a big boulder."
+say player "Wow. That's a big boulder."

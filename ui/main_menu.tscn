@@ -77,7 +77,7 @@ margin/bottom = 778.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Settings"
+text = "UI_SETTINGS"
 flat = false
 
 [node name="credits" type="Button" parent="."]

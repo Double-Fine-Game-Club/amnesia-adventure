@@ -1,8 +1,14 @@
-:use
+:use inv_board
 
-say player "A dog and a rabbit told me these guys could talk.  I guess they were wrong."
+say player "That board won't help it's aesthetic at all."
+
+:pick_up
+
+say player "If Merlin were here I'd have him cast a strength spell on me."
+say player "But he's not, so I can't pick that up."
 
 :look
 
-say player "All of these Moai seem to look the same. Weird."
+say player "It's like it's looking at me."
+say player "Creepy."
 
