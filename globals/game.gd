@@ -35,15 +35,15 @@ func mouse_enter(obj):
 		if current_action != "":
 			text = tr(tr(current_action) + ".combine_id")
 		text = tr(text.replace("%2", ".id"))
-		text = tr(text.replace("%1", tr(current_tool.get_tooltip())))
-		text = tr(text.replace("%2", tr(tt)))
+		text = text.replace("%1", tr(current_tool.get_tooltip()))
+		text = text.replace("%2", tr(tt))
 		
 	elif obj.inventory:
 		var action = obj.action
 		if action == "":
 			action = current_action
-		text = tr(tr(action) + " " + tr(tt))
-		text = tr(text.replace("%2", tr(tt)))
+		text = tr(action) + " " + tr(tt)
+		text = text.replace("%2", tr(tt))
 	else:
 		text = tr(tt)
 	get_tree().call_group(0, "hud", "set_tooltip", text)
@@ -53,8 +53,8 @@ func mouse_exit(obj):
 	var text
 	var tt = obj.get_tooltip()
 	if obj.action != "" && current_tool != null:
-		text = tr(tr(obj.action) + " " + tr(tt))
-		text = tr(text.replace("%2", tr(tt)))
+		text = tr(obj.action) + " " + tr(tt)
+		text = text.replace("%2", tr(tt))
 	else:
 		text = ""
 	get_tree().call_group(0, "hud", "set_tooltip", text)
