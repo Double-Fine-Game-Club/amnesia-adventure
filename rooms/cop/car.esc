@@ -1,0 +1,7 @@
+:pick_up
+
+say player "I can't go anywhere. I have a case to solve."
+
+:look
+
+say player "Car 54. My trusty companion."

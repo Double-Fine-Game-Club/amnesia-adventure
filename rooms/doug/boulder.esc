@@ -1,14 +1,13 @@
 :use inv_board
 
-say player "Hey! There's a ladder under here!"
-say player "Oh, wait. That's right, I have a ladder under my bed!"
+walk player boulder
 
-set_global i/inv_ladder true
+say player "I think I can use this board as a lever to move this rock."
+say player "Here goes nothing!"
+
 set_global i/inv_board false
 
-cut_scene telon fade_out
-change_scene res://rooms/hub/hub.tscn
-cut_scene telon fade_in
+change_scene res://rooms/doug/doug_boulder_pry.tscn
 
 :pick_up
 

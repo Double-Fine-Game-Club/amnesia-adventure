@@ -10,6 +10,7 @@
 
 >	[has_bag,has_pedals,has_screw,has_seat]
 	change_scene "res://rooms/space/cutscene_pipe.tscn"
+	set_global i/inv_space true
 
 :look
 

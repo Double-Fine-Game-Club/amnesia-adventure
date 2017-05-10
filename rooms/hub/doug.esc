@@ -4,4 +4,4 @@ change_scene res://rooms/doug/doug_intro.tscn
 
 :look
 
-say player "That ogre doll looks familiar."
+change_scene res://rooms/doug/doug_intro.tscn

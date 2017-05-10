@@ -24,7 +24,7 @@ func _ready():
 	get_node("GoBack").connect("pressed", self, "close")
 
 	var file = File.new()
-	file.open("res://credits/credits.txt", File.READ)
+	file.open("res://credits/credits.esc", File.READ)
 	while(!file.eof_reached()):
 		get_node("RichTextLabel").add_text(file.get_line())
 		get_node("RichTextLabel").newline()

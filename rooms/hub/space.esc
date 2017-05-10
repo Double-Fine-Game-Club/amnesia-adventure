@@ -4,5 +4,4 @@ change_scene res://rooms/space/space_intro.tscn
 
 :look
 
-say player "That screw came from space."
 
