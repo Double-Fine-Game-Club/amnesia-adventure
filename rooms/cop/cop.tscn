@@ -9,7 +9,7 @@
 [ext_resource path="res://globals/terrain.gd" type="Script" id=7]
 [ext_resource path="res://globals/game.scn" type="PackedScene" id=8]
 [ext_resource path="res://rooms/doug/action_menu_doug.tscn" type="PackedScene" id=9]
-[ext_resource path="res://music/meadow-jenni.ogg" type="AudioStream" id=10]
+[ext_resource path="res://music/retro-70s-action.ogg" type="AudioStream" id=10]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -90,7 +90,7 @@ transform/pos = Vector2( 0, -50 )
 stream/stream = ExtResource( 10 )
 stream/play = false
 stream/loop = true
-stream/volume_db = 12.0
+stream/volume_db = 10.0
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
