@@ -1,0 +1,8 @@
+:use
+
+change_scene res://rooms/cop/cop.tscn
+
+:look
+
+change_scene res://rooms/cop/cop.tscn
+

@@ -4,4 +4,5 @@ change_scene res://rooms/space/space_intro.tscn
 
 :look
 
+change_scene res://rooms/space/space_intro.tscn
 
