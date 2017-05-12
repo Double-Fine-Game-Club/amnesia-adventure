@@ -1,0 +1,24 @@
+:use
+
+say player "I can't go anywhere. I have a case to solve."
+
+:look
+
+say player "Car 54. Its trunk is fully loaded just in case."
+say player "The trunk! That's where I need to look!"
+
+set_global copcomplete true
+set_active cophub false
+
+>	[copcomplete,dougcomplete,clockcomplete,spacecomplete]
+	set_global endgame true
+
+>	[endgame]
+	cut_scene telon fade_out
+	change_scene res://cutscenes/demo-ending/outro.tscn
+	cut_scene telon fade_in
+
+>	[!endgame]
+	cut_scene telon fade_out
+	change_scene res://rooms/hub/hub.tscn
+	cut_scene telon fade_in

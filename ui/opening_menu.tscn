@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=12 format=1]
 
-[ext_resource path="res://ui/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://ui/opening_menu.gd" type="Script" id=1]
 [ext_resource path="res://art/wavingpeople-concept.png" type="Texture" id=2]
 [ext_resource path="res://art/window-mythalore.png" type="Texture" id=3]
 [ext_resource path="res://art/wall-mythalore-and-jenni.png" type="Texture" id=4]
@@ -8,12 +8,9 @@
 [ext_resource path="res://art/upper-curtain-mythalore-and-jenni.png" type="Texture" id=6]
 [ext_resource path="res://art/logo-wavingpeople-and-mythalore.png" type="Texture" id=7]
 [ext_resource path="res://art/foreground-wavingpeople-and-jenni.png" type="Texture" id=8]
-[ext_resource path="res://art/options-button-mythalore.png" type="Texture" id=9]
-[ext_resource path="res://art/play-button-mythalore.png" type="Texture" id=10]
-[ext_resource path="res://art/credits-button-mythalore.png" type="Texture" id=11]
-[ext_resource path="res://art/quit-button-mythalore.png" type="Texture" id=12]
-[ext_resource path="res://fonts/jenni.fnt" type="BitmapFont" id=13]
-[ext_resource path="res://music/menu-of-amnesia-jenni.ogg" type="AudioStream" id=14]
+[ext_resource path="res://art/button-mythalore.png" type="Texture" id=9]
+[ext_resource path="res://fonts/tuffy-bold.fnt" type="BitmapFont" id=10]
+[ext_resource path="res://music/menu-of-amnesia-jenni.ogg" type="AudioStream" id=11]
 
 [node name="main_menu" type="Control"]
 
@@ -122,8 +119,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 1029.0
 margin/top = 685.0
-margin/right = 1292.0
-margin/bottom = 776.0
+margin/right = 1319.0
+margin/bottom = 778.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -131,21 +128,25 @@ textures/normal = ExtResource( 9 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
-[node name="continue" type="TextureButton" parent="."]
+[node name="UI_SETTINGS" type="Label" parent="settings"]
 
-focus/ignore_mouse = false
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 2567.0
-margin/top = 1205.0
-margin/right = 2830.0
-margin/bottom = 1296.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-params/resize_mode = 1
-params/stretch_mode = 0
+size_flags/vertical = 0
+margin/left = 14.0
+margin/top = 12.0
+margin/right = 117.0
+margin/bottom = 31.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_SETTINGS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="new_game" type="TextureButton" parent="."]
 
@@ -153,16 +154,36 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 363.0
+margin/left = 320.0
 margin/top = 686.0
-margin/right = 592.0
+margin/right = 642.0
 margin/bottom = 777.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 10 )
+textures/normal = ExtResource( 9 )
 params/resize_mode = 1
 params/stretch_mode = 0
+
+[node name="UI_NEW_GAME" type="Label" parent="new_game"]
+
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 19.0
+margin/top = 11.0
+margin/right = 133.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_NEW_GAME"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="credits" type="TextureButton" parent="."]
 
@@ -172,14 +193,34 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 312.0
 margin/top = 838.0
-margin/right = 553.0
+margin/right = 575.0
 margin/bottom = 933.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 11 )
+textures/normal = ExtResource( 9 )
 params/resize_mode = 1
 params/stretch_mode = 0
+
+[node name="UI_CREDITS" type="Label" parent="credits"]
+
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 12.0
+margin/top = 12.0
+margin/right = 106.0
+margin/bottom = 32.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_CREDITS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="exit" type="TextureButton" parent="."]
 
@@ -187,139 +228,40 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 1142.0
+margin/left = 1143.0
 margin/top = 838.0
-margin/right = 1360.0
+margin/right = 1361.0
 margin/bottom = 929.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 12 )
+textures/normal = ExtResource( 9 )
 params/resize_mode = 1
 params/stretch_mode = 0
 
-[node name="en" type="TextureButton" parent="."]
+[node name="UI_QUIT" type="Label" parent="exit"]
 
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 2168.0
-margin/top = 597.0
-margin/right = 2290.0
-margin/bottom = 714.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-params/resize_mode = 0
-params/scale = Vector2( 0.5, 0.5 )
-params/stretch_mode = 0
-
-[node name="en" type="Label" parent="en"]
-
-visibility/visible = false
-rect/scale = Vector2( 1.6, 1.6 )
-hint/tooltip = "en"
+rect/scale = Vector2( 2.5, 3.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 16.0
-margin/top = 32.0
-margin/right = 66.0
-margin/bottom = 68.0
-custom_fonts/font = ExtResource( 13 )
-custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
-custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
-text = "en"
+margin/left = 14.0
+margin/top = 10.0
+margin/right = 90.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_QUIT"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="fr" type="TextureButton" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 2184.0
-margin/top = 798.0
-margin/right = 2301.0
-margin/bottom = 915.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-params/resize_mode = 0
-params/scale = Vector2( 0.5, 0.5 )
-params/stretch_mode = 0
-
-[node name="fr" type="Label" parent="fr"]
-
-visibility/visible = false
-rect/scale = Vector2( 1.6, 1.6 )
-hint/tooltip = "fr"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 25.0
-margin/top = 34.0
-margin/right = 65.0
-margin/bottom = 64.0
-custom_fonts/font = ExtResource( 13 )
-custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
-custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
-text = "fr"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="es" type="TextureButton" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 1203.0
-margin/top = 688.0
-margin/right = 1322.0
-margin/bottom = 805.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-params/resize_mode = 0
-params/scale = Vector2( 0.5, 0.5 )
-params/stretch_mode = 0
-
-[node name="es" type="Label" parent="es"]
-
-rect/scale = Vector2( 1.6, 1.6 )
-hint/tooltip = "es"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 27.0
-margin/top = 28.0
-margin/right = 67.0
-margin/bottom = 63.0
-custom_fonts/font = ExtResource( 13 )
-custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
-custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
-text = "es"
-align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 14 )
+stream/stream = ExtResource( 11 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 4.0
@@ -327,11 +269,5 @@ stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
-
-[connection signal="pressed" from="en" to="." method="_on_language_selected" binds= [ "en" ]]
-
-[connection signal="pressed" from="fr" to="." method="_on_language_selected" binds= [ "fr" ]]
-
-[connection signal="pressed" from="es" to="." method="_on_language_selected" binds= [ "es" ]]
 
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://credits/credits.gd" type="Script" id=1]
 [ext_resource path="res://fonts/jenni.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://globals/item.gd" type="Script" id=3]
 
 [node name="Panel" type="Panel"]
 
@@ -55,6 +56,26 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script/script = ExtResource( 3 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+secondary_action = ""
+events_path = "res://credits/credits.esc"
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="GoBack" type="Button" parent="."]
 

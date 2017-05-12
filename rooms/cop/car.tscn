@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://rooms/cop/sprites/70s_cop_car-cheeseness.png" type="Texture" id=1]
+[ext_resource path="res://globals/item.gd" type="Script" id=2]
+[ext_resource path="res://rooms/cop/sprites/70s_cop_car-2-cheeseness-and-jennibee.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="car" type="TextureFrame"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 20.0
+margin/bottom = 40.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+script/script = ExtResource( 2 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Car"
+action = "use"
+secondary_action = "look"
+events_path = "res://rooms/cop/car.esc"
+global_id = "car"
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 574.837, 540.756 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+
+

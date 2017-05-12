@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://rooms/space/cutscene_final.gd" type="Script" id=2]
 [ext_resource path="res://rooms/space/sprites/cutscene_final.png" type="Texture" id=3]
 [ext_resource path="res://fonts/opensans72.fnt" type="BitmapFont" id=4]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=5]
+[ext_resource path="res://rooms/space/escoria-action.tscn" type="PackedScene" id=5]
+[ext_resource path="res://globals/game.scn" type="PackedScene" id=6]
 
 [node name="space_intro" type="Node2D"]
 
@@ -44,6 +45,13 @@ bbcode/enabled = true
 bbcode/bbcode = "Well, the toilet flushed me out, but it also rushed me back in."
 visible_characters = -1
 
-[node name="game" parent="." instance=ExtResource( 5 )]
+[node name="escoria-action" parent="Node2D" instance=ExtResource( 5 )]
+
+margin/left = -276.0
+margin/top = -299.0
+margin/right = -212.0
+margin/bottom = -235.0
+
+[node name="game" parent="." instance=ExtResource( 6 )]
 
 

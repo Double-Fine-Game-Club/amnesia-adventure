@@ -10,7 +10,8 @@
 
 >	[has_bag,has_pedals,has_screw,has_seat]
 	change_scene "res://rooms/space/cutscene_pipe.tscn"
-
+	set_global spacecomplete true
+	set_active spacehub false
 :look
 
 >	[!screw_line1]

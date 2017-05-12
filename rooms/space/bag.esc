@@ -10,6 +10,8 @@
 
 >	[has_bag,has_pedals,has_screw,has_seat]
 	change_scene "res://rooms/space/cutscene_pipe.tscn"
+	set_global spacecomplete true
+	set_active spacehub false
 
 :look
 
@@ -20,7 +22,7 @@
 	stop
 
 >	[!bag_line2]
-	say player "Really though, it’s just a bag of poop."
+	say player "Really though, it's just a bag of poop."
 	set_global bag_line2 true
 	set_global bag_line3 false
 	stop

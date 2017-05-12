@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://globals/white.png" type="Texture" id=1]
+[ext_resource path="res://globals/item.gd" type="Script" id=2]
+
+[node name="escoria-action" type="TextureFrame"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -222.0
+margin/top = -366.0
+margin/right = -158.0
+margin/bottom = -302.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+script/script = ExtResource( 2 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "escoria-action"
+action = "look"
+secondary_action = "use"
+events_path = "res://rooms/space/escoria-action.esc"
+global_id = "escoria-action"
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+

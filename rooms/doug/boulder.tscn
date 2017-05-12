@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://rooms/doug/sprites/boulder-jennibee.png" type="Texture" id=1]
+[ext_resource path="res://rooms/doug/sprites/boulder/boulder-jennibee.png" type="Texture" id=1]
 [ext_resource path="res://globals/item.gd" type="Script" id=2]
 
 [node name="boulder" type="TextureFrame"]
@@ -11,8 +11,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 20.0
-margin/bottom = 40.0
+margin/right = 0.0
+margin/bottom = 0.0
 texture = ExtResource( 1 )
 stretch_mode = 0
 script/script = ExtResource( 2 )

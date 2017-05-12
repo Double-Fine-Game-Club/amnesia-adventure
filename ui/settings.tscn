@@ -1,75 +1,372 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://ui/settings.gd" type="Script" id=1]
-[ext_resource path="res://fonts/jenni.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://art/button-mythalore.png" type="Texture" id=2]
+[ext_resource path="res://fonts/tuffy-bold.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://fonts/jenni.fnt" type="BitmapFont" id=4]
 
-[node name="Panel" type="Panel"]
+[node name="main_menu" type="Control"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 593.0
-margin/top = 325.0
-margin/right = 1549.0
-margin/bottom = 969.0
+margin/left = 0.0
+margin/top = 3.0
+margin/right = 1930.0
+margin/bottom = 1104.0
 script/script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "Script"
-}
 
-[node name="Label" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="."]
 
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -120.0
-margin/top = 71.0
-margin/right = 480.0
-margin/bottom = 108.0
-custom_fonts/font = ExtResource( 2 )
-text = "Options"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label1" type="Label" parent="."]
-
-rect/scale = Vector2( 2, 2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -120.0
-margin/top = 285.0
-margin/right = 480.0
-margin/bottom = 322.0
-custom_fonts/font = ExtResource( 2 )
-text = "Options will go here."
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="GoBack" type="Button" parent="."]
-
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 3
-size_flags/stretch_ratio = 44.0
-margin/left = 428.0
-margin/top = 511.0
-margin/right = 478.0
-margin/bottom = 541.0
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 246.0
+margin/top = 78.0
+margin/right = 1691.0
+margin/bottom = 1043.0
+
+[node name="UI_SETTINGS" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 845.0
+margin/top = 318.0
+margin/right = 926.0
+margin/bottom = 337.0
+text = "UI_SETTINGS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="UI_LANGUAGE" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 817.0
+margin/top = 423.0
+margin/right = 918.0
+margin/bottom = 442.0
+text = "UI_LANGUAGE"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="settings" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -918.0
+margin/top = 498.0
+margin/right = -628.0
+margin/bottom = 591.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "BACK"
-flat = false
+textures/normal = ExtResource( 2 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="UI_SETTINGS" type="Label" parent="settings"]
+
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 14.0
+margin/top = 12.0
+margin/right = 117.0
+margin/bottom = 31.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_SETTINGS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="new_game" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -921.0
+margin/top = 786.0
+margin/right = -599.0
+margin/bottom = 877.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="UI_NEW_GAME" type="Label" parent="new_game"]
+
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 19.0
+margin/top = 11.0
+margin/right = 133.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_NEW_GAME"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="credits" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -801.0
+margin/top = 1095.0
+margin/right = -538.0
+margin/bottom = 1190.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="UI_CREDITS" type="Label" parent="credits"]
+
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 12.0
+margin/top = 12.0
+margin/right = 106.0
+margin/bottom = 32.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_CREDITS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="exit" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -251.0
+margin/top = 1100.0
+margin/right = -33.0
+margin/bottom = 1191.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="UI_QUIT" type="Label" parent="exit"]
+
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 14.0
+margin/top = 10.0
+margin/right = 90.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_QUIT"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="GoBack" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 864.0
+margin/top = 625.0
+margin/right = 1082.0
+margin/bottom = 716.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+params/resize_mode = 1
+params/stretch_mode = 0
+
+[node name="UI_BACK" type="Label" parent="GoBack"]
+
+rect/scale = Vector2( 2.5, 3.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 14.0
+margin/top = 10.0
+margin/right = 90.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.773438, 0.544508, 0.220551, 1 )
+text = "UI_BACK"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="en" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 704.0
+margin/top = 503.0
+margin/right = 837.0
+margin/bottom = 620.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+params/resize_mode = 0
+params/scale = Vector2( 0.5, 0.5 )
+params/stretch_mode = 0
+
+[node name="English" type="Label" parent="en"]
+
+rect/scale = Vector2( 1.6, 1.6 )
+hint/tooltip = "en"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 16.0
+margin/top = 32.0
+margin/right = 68.0
+margin/bottom = 68.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "English"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="fr" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1099.0
+margin/top = 505.0
+margin/right = 1210.0
+margin/bottom = 622.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+params/resize_mode = 0
+params/scale = Vector2( 0.5, 0.5 )
+params/stretch_mode = 0
+
+[node name="Francais" type="Label" parent="fr"]
+
+rect/scale = Vector2( 1.6, 1.6 )
+hint/tooltip = "fr"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 25.0
+margin/top = 34.0
+margin/right = 65.0
+margin/bottom = 64.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "Francais"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="es" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 900.0
+margin/top = 509.0
+margin/right = 1011.0
+margin/bottom = 626.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+params/resize_mode = 0
+params/scale = Vector2( 0.5, 0.5 )
+params/stretch_mode = 0
+
+[node name="Espanol" type="Label" parent="es"]
+
+rect/scale = Vector2( 1.6, 1.6 )
+hint/tooltip = "es"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 27.0
+margin/top = 28.0
+margin/right = 67.0
+margin/bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "Espanol"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="pressed" from="en" to="." method="_on_language_selected" binds= [ "en" ]]
+
+[connection signal="pressed" from="fr" to="." method="_on_language_selected" binds= [ "fr" ]]
+
+[connection signal="pressed" from="es" to="." method="_on_language_selected" binds= [ "es" ]]
 
 

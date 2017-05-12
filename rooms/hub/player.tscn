@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://globals/player.gd" type="Script" id=1]
+[ext_resource path="res://rooms/hub/player_anims.gd" type="Script" id=2]
+[ext_resource path="res://rooms/hub/sprites/adventurer.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "idle"
+length = 1.0
+loop = false
+step = 0.1
+
+[node name="player" type="Node2D"]
+
+script/script = ExtResource( 1 )
+speed = 300
+v_speed_damp = 1.0
+animations = ExtResource( 2 )
+camera_limits = Rect2( 0, 0, 0, 0 )
+telekinetic = false
+placeholders = {
+
+}
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 5.2803, -49.2264 )
+frames = SubResource( 1 )
+animation = "default"
+
+[node name="animation" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 1.0
+root/root = NodePath("..")
+anims/idle = SubResource( 2 )
+playback/active = true
+playback/speed = 6.0
+blend_times = [  ]
+autoplay = ""
+
+
