@@ -3,11 +3,21 @@
 say player "Oh there is a key in here!"
 say player "Ah, now I remember!  The key to the attic is in the clock!"
 
-set_global i/inv_key true
+set_global clockcomplete true
+set_active clockhub false
 
-cut_scene telon fade_out
-change_scene res://rooms/hub/hub.tscn
-cut_scene telon fade_in
+>	[copcomplete,spacecomplete,dougcomplete,clockcomplete]
+	set_global endgame true
+
+>	[endgame]
+	cut_scene telon fade_out
+	change_scene res://cutscenes/demo-ending/outro.tscn
+	cut_scene telon fade_in
+
+>	[!endgame]
+	cut_scene telon fade_out
+	change_scene res://rooms/hub/hub.tscn
+	cut_scene telon fade_in
 
 :look
 

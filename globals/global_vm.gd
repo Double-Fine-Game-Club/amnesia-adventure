@@ -1,9 +1,13 @@
 extends Node
 
+var copcomplete
+var dougcomplete
+var spacecomplete
+var clockcomplete
+var endgame
 var stack = []
 var globals = {}
 var objects = {}
-
 var event_queue = []
 
 var state_return = 0

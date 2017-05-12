@@ -3,12 +3,21 @@
 say player "Weird! There's stairs under here that don't lead anywhere!"
 say player "Oh, wait. That's right, I have to climb the ladder to get to what I lost!"
 
-set_global i/inv_ladder true
-set_global i/inv_board false
+set_global dougcomplete true
+set_active doughub false
 
-cut_scene telon fade_out
-change_scene res://rooms/hub/hub.tscn
-cut_scene telon fade_in
+>	[copcomplete,dougcomplete,clockcomplete,spacecomplete]
+	set_global endgame true
+
+>	[endgame]
+	cut_scene telon fade_out
+	change_scene res://cutscenes/demo-ending/outro.tscn
+	cut_scene telon fade_in
+
+>	[!endgame]
+	cut_scene telon fade_out
+	change_scene res://rooms/hub/hub.tscn
+	cut_scene telon fade_in
 
 :look
 

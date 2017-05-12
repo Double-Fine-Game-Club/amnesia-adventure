@@ -1,0 +1,29 @@
+:look
+
+>	[copcomplete,dougcomplete,clockcomplete,spacecomplete]
+	set_global endgame true
+
+>	[endgame]
+	cut_scene telon fade_out
+	change_scene res://cutscenes/demo-ending/outro.tscn
+	cut_scene telon fade_in
+
+>	[!endgame]
+	cut_scene telon fade_out
+	change_scene res://rooms/hub/hub.tscn
+	cut_scene telon fade_in
+
+:use
+
+>	[copcomplete,dougcomplete,clockcomplete,spacecomplete]
+	set_global endgame true
+
+>	[endgame]
+	cut_scene telon fade_out
+	change_scene res://cutscenes/demo-ending/outro.tscn
+	cut_scene telon fade_in
+
+>	[!endgame]
+	cut_scene telon fade_out
+	change_scene res://rooms/hub/hub.tscn
+	cut_scene telon fade_in

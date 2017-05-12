@@ -31,8 +31,8 @@ speed = 300
 scale_on_map = false
 light_on_map = false
 tooltip = "Car"
-action = "look"
-secondary_action = ""
+action = "use"
+secondary_action = "look"
 events_path = "res://rooms/cop/car.esc"
 global_id = "car"
 use_combine = false
@@ -51,6 +51,7 @@ use_custom_z = false
 transform/pos = Vector2( 574.837, 540.756 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 
 
