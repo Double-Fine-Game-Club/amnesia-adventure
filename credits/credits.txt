@@ -12,6 +12,8 @@ kednar
 WavingPeople
 Mythalore
 etisdew
+germila
+kyle3wynn
 
 See github.com/double-fine-game-club/amnesia-adventure for an up to date list of contributors and contributions
 
