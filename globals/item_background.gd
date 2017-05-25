@@ -15,6 +15,7 @@ export var talk_animation = "talk"
 export var active = true setget set_active,get_active
 export var placeholders = {}
 export var use_custom_z = false
+var clicked = false
 
 var anim_notify = null
 var anim_scale_override = null
@@ -22,6 +23,9 @@ var anim_scale_override = null
 var ui_anim = null
 
 var event_table = {}
+
+func is_clicked():
+	return clicked
 
 #func _set(name, val):
 #	if name == "events_path":
@@ -93,9 +97,11 @@ func mouse_exit():
 func input(viewport, event, shape_idx):
 	if event.type == InputEvent.MOUSE_BUTTON || event.is_action("ui_accept"):
 		if event.is_pressed():
+			clicked = true
 			get_tree().call_group(0, "game", "clicked", self, get_pos(), event.button_index)
 			_check_focus(true, true)
 		else:
+			clicked = false
 			_check_focus(true, false)
 
 func _check_focus(focus, pressed):

@@ -69,6 +69,12 @@ func set_current_tool(p_tool):
 	current_tool = p_tool
 
 func clicked(obj, pos, button_index):
+	# If an overlapping area is being clicked, don't click this one!
+	if obj.get_type() == "Area2D":
+		for a in obj.get_overlapping_areas():
+			if a.has_method("is_clicked") and a.is_clicked():
+				return
+
 	joystick_mode = false
 	# TODO: Figure out why stack isn't cleared when interacting with item_background
 	if !vm.can_interact():
