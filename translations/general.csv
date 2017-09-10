@@ -12,11 +12,11 @@ UI_QUIT,Quit,Quitter,Quitar
 UI_YES,Yes,Oui,Si
 UI_NO,No,Non,No
 UI_QUIT_CONFIRM,Do you want to quit the game?,Souhaitez-vous vraiment quitter le jeu?,Queres realmente quitar el juego
-UI_NEW_GAME_CONFIRM,Start new game? Your unsaved progress will be lost,Commencer un nouveau jeu ? Vous n'avez pas sauvegarde votre progression…,Empezar un nuevo juego ? No has salvado su progresion…,
+UI_NEW_GAME_CONFIRM,Start new game? Your unsaved progress will be lost,Commencer un nouveau jeu? Vous n'avez pas sauvegarde votre progression,Empezar un nuevo juego? No has salvado su progresion
 Board,Board,La Planche,El Tablon
 Boulder,Boulder,Le Rocher,La Roca
 Key,Key,La Cle,La Llave
 Ladder,Ladder,La Echelle,La Escalera
 Clock,Clock,L'horloge,El Reloj
 Doug the Ogre doll,Doug the Ogre doll,La poupee de l'ogre nomme Doug,El muneco del ogro llamado Doug
-Screw from space,La vis de l'espace,El tornillo desde el espacio
+Screw,Screw from space,La vis de l'espace,El tornillo desde el espacio
